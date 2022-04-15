@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/04/14 23:41:04 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/04/15 02:39:27 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include "../libs/libft/libft.h"
 # include <stdio.h> // FIXME:
-# include <fcntl.h>
+# include <stdlib.h> // FIXME:
+# include <unistd.h>
+# include <stdarg.h>
 
 # define X_EVENT_KEY_PRESS		2
 # define X_EVENT_KEY_RELEASE	3
@@ -25,13 +27,32 @@
 enum	e_error
 {
 	NO_ERROR,
+	ERROR_IS_NOT_INT,
+	ERROR_INT_MAXUP,
+	ERROR_INT_MINDOWN,
+	ERROR_DOUBLE,
 	ERROR
 };
 
 /****----------- struct -----------****/
 
+typedef struct s_data
+{
+	void			*ptra;
+	void			*ptrb;
+	t_list			stacka;
+	t_list			stackb;
+	va_list			ap;
+	
+	enum e_error	error;
+}				t_data;
+
 /******------------------- utils ---------------------******/
 
 int		ft_str_search_char(char *str, char c);
+
+/******-------------- Error management --------------******/
+
+int		check_arg_is_valid(int ac, char **av);
 
 #endif

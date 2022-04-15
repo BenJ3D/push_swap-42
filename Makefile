@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/04/14 23:45:35 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/04/15 02:37:29 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ LIBFT_PATH = ./libs/libft/
 # Name
 
 SRC_NAME =	main.c			\
-			utils.c
+			utils.c			\
+			check_arg.c		\
+			error.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -45,10 +47,10 @@ LDFLAGS = -L./libs/libft/
 
 LFT = -lft
 
-CC = gcc $(CFLAGS)
+CC = gcc $(CFLAGS) $(SANITIZE)
 
 CFLAGS =# -Wall -Wextra -Werror
-
+SANITIZE = -fsanitize=address -g3
 
 # Rules
 
