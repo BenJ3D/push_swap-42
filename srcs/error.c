@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/04/15 01:41:15 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/04/20 19:46:04 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int	write_error_type(t_data *data)
 	if (data->error == ERROR)
 		ft_putstr("Error\n");
 	else if (data->error == ERROR_DOUBLE)
-		ft_putstr("Error\nduplicate detected");
+		ft_putstr("Error\nduplicate detected\n");
 	else if (data->error == ERROR_INT_MAXUP)
-		ft_putstr("Error\nnumber greater than int max detected");
+		ft_putstr("Error\nnumber greater than int max detected\n");
 	else if (data->error == ERROR_INT_MINDOWN)
-		ft_putstr("Error\nnumber less than int min detected");
+		ft_putstr("Error\nnumber less than int min detected\n");
 	else if (data->error == ERROR_IS_NOT_INT)
-		ft_putstr("Error\nnumber less than int min detected");
+		ft_putstr("Error\nis not int\n");
 	else
 		write_error_type2(data);
 	if (data->error != NO_ERROR)

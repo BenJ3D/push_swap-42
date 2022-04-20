@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/04/15 02:37:29 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/04/20 19:48:46 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,9 @@ OBJ_PATH = ./objs/
 
 CPPFLAGS = -I./includes/
 
-LIBFT_PATH = ./libs/libft/
+LIBFT_PATH = ./libs/libft/libft.a
 
+HEADER = ./includes/push_swap.h
 
 
 # Name
@@ -50,27 +51,23 @@ LFT = -lft
 CC = gcc $(CFLAGS) $(SANITIZE)
 
 CFLAGS =# -Wall -Wextra -Werror
-SANITIZE = -fsanitize=address -g3
+SANITIZE =# -fsanitize=address -g3
 
 # Rules
 
-all: $(NAME) 
+all: libft $(NAME) 
 
-$(NAME): $(LIBFT) $(OBJ) 
-	@make -C./libs/libft/
+$(NAME): $(OBJ) $(LIBFT_PATH) $(HEADER) ./Makefile
 	@echo "\033[34mCreation of $(NAME) ...\033[0m"
-	@$(CC) $(MAIN) $(LDFLAGS) $(LFT) $(OBJ) -o $@ $(MLX)
+	@$(CC) $(LIBFT_PATH) $(OBJ) -o $@
 	@echo "\033[32m$(NAME) created\n\033[0m"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CPPFLAGS) -o $@ -c $<
 
-$(LIBFT):
+libft:
 	@make -C./libs/libft/
-
-${GNL}:
-	@make -C ./libs/gnl
 
 clean:
 	@make clean -C ./libs/libft/
@@ -82,13 +79,13 @@ clean:
 fclean: clean
 	@make fclean -C ./libs/libft/
 	@echo "\033[33mRemoval of $(NAME)...\033[0m"
-	@rm -f $(NAME)
+	@rm -rf $(NAME) .vs*
 	@echo "\033[31mBinary $(NAME) deleted\n\033[0m"
 
 re: fclean all
 
 norme:
-	norminette $(SRC)
+	norminette ./srcs/
 	norminette ./includes/*.h
 	norminette $(LIBFT_PATH)*.c
 
