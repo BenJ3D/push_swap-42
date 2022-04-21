@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
+#    By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/04/20 19:48:46 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/04/21 02:45:52 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,10 +57,17 @@ SANITIZE =# -fsanitize=address -g3
 
 all: libft $(NAME) 
 
-$(NAME): $(OBJ) $(LIBFT_PATH) $(HEADER) ./Makefile
+
+$(NAME): $(LIBFT_PATH) $(OBJ) $(HEADER) ./Makefile
+ifeq ($(shell uname -s), Linux)
+	@echo "\033[34mCreation of $(NAME) on linux ...\033[0m"
+	@$(CC) $(OBJ) $(LIBFT_PATH) -o $@
+	@echo "\033[32m$(NAME) created\n\033[0m"
+else
 	@echo "\033[34mCreation of $(NAME) ...\033[0m"
 	@$(CC) $(LIBFT_PATH) $(OBJ) -o $@
 	@echo "\033[32m$(NAME) created\n\033[0m"
+endif
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true

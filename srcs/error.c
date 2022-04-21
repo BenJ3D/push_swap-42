@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/04/20 19:46:04 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/04/21 02:46:02 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	write_error_type(t_data *data)
 	else if (data->error == ERROR_IS_NOT_INT)
 		ft_putstr("Error\nis not int\n");
 	else
-		write_error_type2(data);
+		//write_error_type2(data);
 	if (data->error != NO_ERROR)
 		exit (0);
 	return (0);

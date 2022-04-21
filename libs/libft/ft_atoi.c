@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:30:59 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/04/06 16:49:20 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/04/21 02:04:38 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	isspace(char *str)
+int	ft_isspace2(char *str)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int	ft_atoi(const char *src)
 	nb = 0;
 	sign = 1;
 	i = 0;
-	while (isspace(&str[i]) != 0)
+	while (ft_isspace2(&str[i]) != 0)
 		i++;
 	if (str[i] == '-' && str[i + 1] != '+')
 	{
