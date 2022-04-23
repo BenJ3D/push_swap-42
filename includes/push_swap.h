@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/04/20 19:46:55 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/04/23 13:47:31 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,12 @@ enum	e_error
 };
 
 /****----------- struct -----------****/
-
 typedef struct s_data
 {
-	void			*ptra;
-	void			*ptrb;
-	t_list			stacka;
-	t_list			stackb;
+	t_list			*first;
+	t_list			*list;
+	t_list			*stacka;
+	t_list			*stackb;
 	va_list			ap;
 	enum e_error	error;
 }				t_data;
