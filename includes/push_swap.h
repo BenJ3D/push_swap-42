@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/01 13:52:19 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/01 18:51:40 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,11 @@ int		check_arg_is_valid(int ac, char **av);
 
 /******-------------- my_lst function --------------******/
 
-t_lst *lst_init(void);
-void insertion(t_lst *liste, int new_nbr);
+t_lst	*lst_init(void);
+void	lst_add(t_lst *liste, int new_nbr);
+void	lst_del(t_lst *list);
+void	lst_print(t_lst *liste);
+
+void	lst_add_middle(t_lst *list, t_lst *prev, int newnbr);
 
 #endif
