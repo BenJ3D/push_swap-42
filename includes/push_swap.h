@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/04/20 19:46:55 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/01 13:52:19 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,22 @@ enum	e_error
 	ERROR
 };
 
+/****----------- struct lst -----------****/
+
+typedef struct s_element t_element;
+
+struct s_element
+{
+	int				nbr;
+	t_element		*next;
+};
+
+typedef struct s_lst
+{
+	t_element		*first;
+}		t_lst;
+
+
 /****----------- struct -----------****/
 
 typedef struct s_data
@@ -44,12 +60,20 @@ typedef struct s_data
 	enum e_error	error;
 }				t_data;
 
+
 /******------------------- utils ---------------------******/
 
 int		ft_str_search_char(char *str, char c);
 
+
 /******-------------- Error management --------------******/
 
 int		check_arg_is_valid(int ac, char **av);
+
+
+/******-------------- my_lst function --------------******/
+
+t_lst *lst_init(void);
+void insertion(t_lst *liste, int new_nbr);
 
 #endif

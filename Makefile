@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/04/21 02:45:52 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/01 13:31:50 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ HEADER = ./includes/push_swap.h
 SRC_NAME =	main.c			\
 			utils.c			\
 			check_arg.c		\
-			error.c
+			error.c			\
+			my_lst.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
