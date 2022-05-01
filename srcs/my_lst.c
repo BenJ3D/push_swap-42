@@ -6,13 +6,13 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 13:17:48 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/01 18:44:26 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/01 23:37:13 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_lst	*lst_init(void)
+t_lst	*lst_init(int start_nbr)
 {
 	t_lst		*list;
 	t_element	*element;
@@ -21,11 +21,8 @@ t_lst	*lst_init(void)
 	element = malloc(sizeof(*element));
 
 	if (list == NULL || element == NULL)
-	{
 		exit(EXIT_FAILURE);
-	}
-
-	element->nbr = 0;
+	element->nbr = start_nbr;
 	element->next = NULL;
 	list->first = element;
 
@@ -74,10 +71,19 @@ void	lst_print(t_lst *liste)
 	ft_putstr("NULL \n");
 }
 
-void	lst_add_address(t_lst *list, int fnbr, int newnbr)
+void	lst_add_at_address(t_lst *list, int fnbr, int newnbr)
 {
-	t_lst	*tmp;
-	tmp = list;
+	t_element	*tmp;
+	t_lst		*tlst;
+
+	tlst = list;
+	
+	while((tlst->first->nbr != fnbr) || tlst)
+	{
+		tlst->first = tlst->first->next;
+	}
+	if (tlst->first->nbr == fnbr)
+	
 	lst_add(list, newnbr);
 
 }

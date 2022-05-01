@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/01 19:12:56 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/01 23:52:14 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ int	main(int ac, char **av)
 {
 	t_data data;
 	
-	//check_arg_is_valid(ac, av);
+	check_arg_is_valid(ac, av);
 
 	t_lst		*test_lst;
 	t_lst		*test_tmp;
 
-	test_lst = lst_init();
+	test_lst = lst_init(3);
+	test_tmp = lst_init(3);
 	lst_add(test_lst, 4);
 	lst_add(test_lst, 8);
 	lst_add(test_lst, 15);
@@ -35,6 +36,7 @@ int	main(int ac, char **av)
 	// lst_del(test_tmp);
 	// lst_del(test_tmp);
 	lst_print(test_lst);
+	lst_print(test_tmp);
 
 	// test_tmp = test_lst;
 	// test_tmp->first = test_tmp->first->next->next;
