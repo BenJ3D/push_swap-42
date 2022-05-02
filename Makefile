@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/05/01 13:31:50 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/02 14:07:32 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRC_NAME =	main.c			\
 			utils.c			\
 			check_arg.c		\
 			error.c			\
-			my_lst.c
+			my_lst.c		\
+			pushswap_lst.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

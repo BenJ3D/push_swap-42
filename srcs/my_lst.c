@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   my_lst.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 13:17:48 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/01 23:37:13 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:28:33 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_lst	*lst_init(int start_nbr)
 	return (list);
 }
 
-void	lst_add(t_lst *list, int new_nbr)
+void	lst_add(t_element *list, int new_nbr)
 {
 	t_element *new;
 
@@ -55,18 +55,18 @@ void	lst_del(t_lst *list)
 	}
 }
 
-void	lst_print(t_lst *liste)
+void	lst_print(t_element *liste)
 {
-	t_element *current;
+	t_element *tmp;
 
+	tmp = liste;
 	if (liste == NULL)
 		exit(EXIT_FAILURE);
-	current = liste->first;
-	while (current != NULL)
+	while (tmp != NULL)
 	{
-		ft_putnbr(current->nbr);
+		ft_putnbr(tmp->nbr);
 		ft_putstr(" -> ");
-		current = current->next;
+		tmp = tmp->next;
 	}
 	ft_putstr("NULL \n");
 }

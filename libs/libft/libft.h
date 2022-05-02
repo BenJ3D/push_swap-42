@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:59:56 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/04/08 18:04:04 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:53:12 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <unistd.h>
 # include <stdio.h>
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+// typedef struct s_list
+// {
+// 	int				*content;
+// 	struct s_list	*next;
+// }					t_list;
 size_t	ft_strlen(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -63,15 +63,15 @@ int		ft_intlen(long long nb);
 int		ft_putunnbr_fd(unsigned int n, int fd);
 
 //chained list
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **alst, t_list *new);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **alst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-char	*ft_strtrim(char const *s1, char const *set);
+// t_list	*ft_lstnew(void *content);
+// void	ft_lstadd_front(t_list **alst, t_list *new);
+// int		ft_lstsize(t_list *lst);
+// t_list	*ft_lstlast(t_list *lst);
+// void	ft_lstadd_back(t_list **alst, t_list *new);
+// void	ft_lstdelone(t_list *lst, void (*del)(void *));
+// void	ft_lstclear(t_list **lst, void (*del)(void *));
+// void	ft_lstiter(t_list *lst, void (*f)(void *));
+// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+// char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
