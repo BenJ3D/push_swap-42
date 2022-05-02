@@ -19,7 +19,7 @@ void	ft_lstadd_front(t_list **alst, t_list *new)
 	*alst = new;
 }
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*tmp;
 

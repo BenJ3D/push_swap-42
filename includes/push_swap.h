@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/02 15:16:27 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/02 17:42:12 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ enum	e_error
 
 typedef struct s_list
 {
-	int				*content;
+	int				content;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
@@ -61,10 +61,8 @@ typedef struct s_list
 
 typedef struct s_data
 {
-	void			*ptra;
-	void			*ptrb;
-	t_list			stacka;
-	t_list			stackb;
+	t_list			*stacka;
+	t_list			*stackb;
 	va_list			ap;
 	enum e_error	error;
 }				t_data;
@@ -82,22 +80,22 @@ int		check_arg_is_valid(int ac, char **av);
 
 /******-------------- my_lst function --------------******/
 
-t_lst	*lst_init(int);
-void	lst_add(t_lst *liste, int new_nbr);
-void	lst_del(t_lst *list);
-void	lst_print(t_lst *liste);
-void	lst_add_at_address(t_lst *list, int fnbr, int newnbr);
+// t_lst	*lst_init(int);
+// void	lst_add(t_lst *liste, int new_nbr);
+// void	lst_del(t_lst *list);
+void	ft_lstprint(t_list *list);
+// void	lst_add_at_address(t_lst *list, int fnbr, int newnbr);
 
 //chained list
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
-int		ft_lstsize(t_list *lst);
+// int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-char	*ft_strtrim(char const *s1, char const *set);
+// void	ft_lstiter(t_list *lst, void (*f)(void *));
+// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+// char	*ft_strtrim(char const *s1, char const *set);
 
 #endif

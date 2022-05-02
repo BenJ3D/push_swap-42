@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/05/02 14:07:32 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/02 15:30:49 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,8 @@ SRC_NAME =	main.c			\
 			utils.c			\
 			check_arg.c		\
 			error.c			\
-			my_lst.c		\
-			pushswap_lst.c
+			mylst.c			\
+			mylst_utils.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
