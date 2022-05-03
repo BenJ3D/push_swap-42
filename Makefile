@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/05/02 15:30:49 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/03 18:14:43 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,7 +101,7 @@ norme:
 
 git:
 	git add .
-	git commit -m "$m"
+	printf "Message of the commit: " && read msg && git commit -m "$$msg"
 	git push
 
 .PHONY: all, clean, fclean, re
