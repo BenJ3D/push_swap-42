@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
+#    By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/05/03 18:18:56 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/04 16:21:58 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Binary
+# Binary 
 
 NAME = push_swap
 
