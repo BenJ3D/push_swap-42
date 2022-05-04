@@ -15,8 +15,8 @@
 int	main(int ac, char **av)
 {
 	int ctn;
-	
-	ctn = 15;
+				
+	ctn = 42;
 	
 	check_arg_is_valid(ac, av);
 	return (0);
