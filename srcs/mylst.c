@@ -31,29 +31,29 @@ t_list	*ft_lstnew(int content)
 	return (tmp);
 }
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list	*tmp;
+// void	ft_lstclear(t_list **lst, void (*del)(void*))
+// {
+// 	t_list	*tmp;
 
-	if (lst)
-	{
-		while (*lst)
-		{
-			tmp = (*lst)->next;
-			ft_lstdelone(*lst, del);
-			(*lst) = tmp;
-		}
-	}
-}
+// 	if (lst)
+// 	{
+// 		while (*lst)
+// 		{
+// 			tmp = (*lst)->next;
+// 			ft_lstdelone(*lst, del);
+// 			(*lst) = tmp;
+// 		}
+// 	}
+// }
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
-{
-	if (!lst)
-		return ;
-	if (del)
-		del(lst->content);
-	free(lst);
-}
+// void	ft_lstdelone(t_list *lst, void (*del)(void *))
+// {
+// 	if (!lst)
+// 		return ;
+// 	if (del)
+// 		del(lst->content);
+// 	free(lst);
+// }
 
 t_list	*ft_lstlast(t_list *lst)
 {

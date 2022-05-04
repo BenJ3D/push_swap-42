@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/02 18:51:10 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/04 15:17:41 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int testlst(t_list *list) //FIXME:
 	ft_lstadd_back(&list, ft_lstnew(3));
 	 //printf lst
 	ft_lstprint(list);
-	
+
 	tmp = &list;
 	//avance dans lst via tmp
 	tmp = &list->next->next;
@@ -45,14 +45,16 @@ int testlst(t_list *list) //FIXME:
 int	main(int ac, char **av)
 {
 	t_data data;
+	t_list	*tmp;
 	
 	check_arg_is_valid(ac, av);
 
 	testlst(data.stacka);
-	while(data.stacka) //TODO: essayer de free toute la chaine
-	{
-		data.stacka
-		
-	}
+	// while(data.stacka) //TODO: essayer de free toute la chaine
+	// {
+	// 	tmp = data.stacka;
+	// 	data.stacka->next = tmp;
+	// 	free(tmp);
+	// }
 	return (0);
 }
