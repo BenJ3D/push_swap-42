@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/04 16:04:18 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/04 16:23:28 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int ac, char **av)
 	int ctn;
 				
 	ctn = 2;
-	
-	check_arg_is_valid(ac, av);
+	check_arg_is_valid(ctn, av[1]);
 	return (0);
 }
