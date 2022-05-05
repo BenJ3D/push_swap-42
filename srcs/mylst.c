@@ -23,7 +23,7 @@ t_list	*ft_lstnew(int content)
 {
 	t_list	*tmp;
 
-	tmp = (t_list *)malloc(sizeof(*tmp));
+	tmp = (t_list *)malloc(sizeof(t_list));
 	if (!tmp)
 		return (NULL);
 	tmp->content = content;

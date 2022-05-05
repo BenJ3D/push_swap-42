@@ -50,10 +50,11 @@ LDFLAGS = -L./libs/libft/
 
 LFT = -lft
 
-CC = gcc $(CFLAGS) $(SANITIZE)
+CC = gcc $(CFLAGS) $(SANITIZE) $(LLDBFLAG)
 
 CFLAGS =# -Wall -Wextra -Werror
-SANITIZE =# -fsanitize=address -g3
+SANITIZE = -fsanitize=address
+LLDBFLAG =  -g3
 
 # Rules
 
