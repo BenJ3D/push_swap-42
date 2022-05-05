@@ -47,17 +47,12 @@ t_list	*fill_stacka(int ac, char **av)
 {
 	int	i;
 	t_list	*tmp;
-	t_list	*first;
 
 	i = 1;
 	tmp = NULL;
-	first = tmp;
 	while (i < ac)
-	{
-		ft_lstadd_back(&tmp, ft_lstnew(ft_atoi(av[i])));
-		i++;
-	}
-	return (first);
+		ft_lstadd_back(&tmp, ft_lstnew(ft_atoi(av[i++])));
+	return (tmp);
 }
 
 int	main(int ac, char **av)
@@ -80,9 +75,8 @@ int	main(int ac, char **av)
 		// ft_lstprint(data.stacka);
 
 		//test = fill_stacka(ac, av);
-		data.stacka = NULL;
 		data.stacka = fill_stacka(ac, av);
-		ft_lstprint(test);
+		ft_lstprint(data.stacka);
 		// ft_lstprint(data->stacka);
 	}
 	// check_arg_is_valid(ac, av[1]);
