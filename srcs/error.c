@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/04/21 02:46:02 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 00:35:45 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	write_error_type(t_data *data)
 	else if (data->error == ERROR_INT_MINDOWN)
 		ft_putstr("Error\nnumber less than int min detected\n");
 	else if (data->error == ERROR_IS_NOT_INT)
-		ft_putstr("Error\nis not int\n");
-	else
+		ft_putstr("Error\nInvalid int detected\n");
+	//else
 		//write_error_type2(data);
 	if (data->error != NO_ERROR)
 		exit (0);

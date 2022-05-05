@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/04 15:48:21 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 00:06:40 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,30 @@ typedef struct s_data
 	enum e_error	error;
 }				t_data;
 
+/******-----------------push_swap-------------------******/
+
+void fill_stacka(t_data **data, int ac, char **av);
+int init_push_swap(t_data **data, int ac, char **av);
+
 
 /******------------------- utils ---------------------******/
 
-int		ft_str_search_char(char *str, char c);
-
+	int ft_str_search_char(char *str, char c);
+	long ft_atoi_long(const char *src, t_data **data);
 
 /******-------------- Error management --------------******/
 
-int		check_arg_is_valid(int ac, char **av);
+	int check_arg_is_valid(int ac, char **av);
+	int write_error_type(t_data *data);
 
+	/******-------------- my_lst function --------------******/
 
-/******-------------- my_lst function --------------******/
+	void ft_lstprint(t_list *list);
+	void ft_lstprintv(t_list *list);
+	void ft_lstprint_index(t_list *list);
 
-void	ft_lstprint(t_list *list);
-
-//chained list
-t_list	*ft_lstnew(int content);
+	// chained list
+	t_list *ft_lstnew(int content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **alst, t_list *new);

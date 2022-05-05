@@ -27,33 +27,10 @@ t_list	*ft_lstnew(int content)
 	if (!tmp)
 		return (NULL);
 	tmp->content = content;
+	tmp->index = 0;
 	tmp->next = NULL;
 	return (tmp);
 }
-
-// void	ft_lstclear(t_list **lst, void (*del)(void*))
-// {
-// 	t_list	*tmp;
-
-// 	if (lst)
-// 	{
-// 		while (*lst)
-// 		{
-// 			tmp = (*lst)->next;
-// 			ft_lstdelone(*lst, del);
-// 			(*lst) = tmp;
-// 		}
-// 	}
-// }
-
-// void	ft_lstdelone(t_list *lst, void (*del)(void *))
-// {
-// 	if (!lst)
-// 		return ;
-// 	if (del)
-// 		del(lst->content);
-// 	free(lst);
-// }
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -63,3 +40,52 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
+void ft_lstprint(t_list *list)
+{
+	t_list *tmp;
+
+	tmp = list;
+	if (list == NULL)
+		exit(EXIT_FAILURE);
+	while (tmp != NULL)
+	{
+		ft_putnbr(tmp->content);
+		ft_putstr(" -> ");
+		tmp = tmp->next;
+	}
+	ft_putstr("NULL \n");
+}
+
+void ft_lstprintv(t_list *list)
+{
+	t_list *tmp;
+
+	tmp = list;
+	if (list == NULL)
+		exit(EXIT_FAILURE);
+	while (tmp != NULL)
+	{
+		ft_putnbr(tmp->content);
+		ft_putstr("\n");
+		tmp = tmp->next;
+	}
+	ft_putstr("__");
+}
+
+void ft_lstprint_index(t_list *list)
+{
+	t_list *tmp;
+
+	tmp = list;
+	if (list == NULL)
+		exit(EXIT_FAILURE);
+	while (tmp != NULL)
+	{
+		ft_putnbr(tmp->content);
+		ft_putstr("		");
+		ft_putnbr(tmp->index);
+		ft_putstr("\n");
+		tmp = tmp->next;
+	}
+	ft_putstr("____");
+}
