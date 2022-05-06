@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 00:06:40 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 16:03:31 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@
 # include <stdlib.h> // FIXME:
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
 
-/****------------ enum ------------****/
-enum	e_error
-{
-	NO_ERROR,
-	ERROR_IS_NOT_INT,
-	ERROR_INT_MAXUP,
-	ERROR_INT_MINDOWN,
-	ERROR_DOUBLE,
-	ERROR_ALREADY_SORT,
-	ERROR_ONE_ARG,
-	ERROR
-};
+	/****------------ enum ------------****/
+	enum e_error {
+		NO_ERROR,
+		ERROR_IS_NOT_INT,
+		ERROR_INT_MAXUP,
+		ERROR_INT_MINDOWN,
+		ERROR_DOUBLE,
+		ERROR_ALREADY_SORT,
+		ERROR_ONE_ARG,
+		ERROR
+	};
 
 /****----------- struct lst -----------****/
 

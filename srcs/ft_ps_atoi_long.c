@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:30:59 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 12:15:00 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 16:07:37 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,15 @@ int	check_is_valid_int(t_data **data, char *str, int i)
 	return (0);
 }
 
+
 int	check_if_int_max_or_min(t_data **data, long nb)
 {
-	if (nb > __INT32_MAX__)
-		(*data)->error = ERROR_INT_MAXUP 
-	else if (nb < __INT32_MIN__) //TODO: faire la mise en forme
-		(*data)->error = ERROR_INT_MINDOWN
+	if (nb > INT_MAX)
+		(*data)->error = ERROR_INT_MAXUP; //TODO lkjdslk
+	else if (nb < INT_MIN) //TODO: faire la mise en forme
+		(*data)->error = ERROR_INT_MINDOWN;
 	if ((*data)->error != NO_ERROR)
-		write_error_type;
+		write_error_type(*data);
 	return (0);
 }
 
@@ -72,5 +73,6 @@ long ft_atoi_long(const char *src, t_data **data)
 	check_is_valid_int(data, str, i);
 	while (str[i] >= '0' && str[i] <= '9')
 		nb = (nb * 10) + str[i++] - '0';
+	check_if_int_max_or_min(data, (nb * sign));
 	return (nb * sign);
 }
