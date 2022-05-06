@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 00:33:39 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 16:58:06 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ void fill_stacka(t_data **data, int ac, char **av)
 int	init_push_swap(t_data **data, int ac, char **av)
 {
 	(*data)->error = NO_ERROR;
+	(*data)->nbr_arg = ac - 1;
 	fill_stacka(data, ac, av);
 	init_stackb(data);
 	ft_lstprint_index((*data)->stacka);
+	printf("number elements %i\n", (*data)->nbr_arg);
 	return (0);
 }

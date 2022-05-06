@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:30:59 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 16:07:37 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 17:04:41 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,6 @@ int ft_isspace3(char *str)
 	if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' 
 		|| str[i] == '\f' || str[i] == '\r')
 		return (1);
-	return (0);
-}
-
-int	check_is_valid_int(t_data **data, char *str, int i)
-{
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]) == 0)
-		{
-			(*data)->error = ERROR_IS_NOT_INT;
-			break ;
-		}
-		i++;
-	}
-	write_error_type(*data);
-	return (0);
-}
-
-
-int	check_if_int_max_or_min(t_data **data, long nb)
-{
-	if (nb > INT_MAX)
-		(*data)->error = ERROR_INT_MAXUP; //TODO lkjdslk
-	else if (nb < INT_MIN) //TODO: faire la mise en forme
-		(*data)->error = ERROR_INT_MINDOWN;
-	if ((*data)->error != NO_ERROR)
-		write_error_type(*data);
 	return (0);
 }
 
@@ -70,9 +43,11 @@ long ft_atoi_long(const char *src, t_data **data)
 	}
 	while (str[i] == '+')
 		i++;
+	if (str[i] == '\0')
+		(*data)->error = ERROR_IS_NOT_INT;
 	check_is_valid_int(data, str, i);
 	while (str[i] >= '0' && str[i] <= '9')
 		nb = (nb * 10) + str[i++] - '0';
-	check_if_int_max_or_min(data, (nb * sign));
+	check_int_max_or_min(data, (nb * sign));
 	return (nb * sign);
 }
