@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 21:47:32 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 22:13:58 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct s_data
 
 /******-------------- Error management --------------******/
 
-	int	check_order_of_numbers(t_data **data);
+	int	check_if_the_list_is_sorted(t_data **data);
 	int check_arg_is_valid(int ac, char **av);
 	int check_is_valid_int(t_data **data, char *str, int i);
 	int check_int_max_or_min(t_data **data, long nb);

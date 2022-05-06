@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 21:53:47 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 21:58:46 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int testlst(t_list **list) // FIXME:
 	ft_lstprint(*list);
 	ft_lstprint(tmp);
 
-	tmp = tmp->next->next->next;
+	tmp = (tmp)->next->next->next;
 	ft_lstprint(*list);
 	ft_lstprint(tmp);
 
