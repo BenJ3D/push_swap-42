@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 16:57:56 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/06 20:58:13 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,24 @@ int	check_double(t_data **data)
 int	check_order_of_numbers(t_data **data)
 {
 	int	i;
-	
-	i = 0;
+	int	y;
+	t_data	**tmp;
+	int dbarg = (*data)->nbr_arg;
+
+	tmp = data;
+	i = 1;
+	y = 1;
+	// ft_lstprint_index((*tmp)->stacka);
 	while ((*data)->nbr_arg > i)
 	{
-		
+		if (((*tmp)->stacka->content < (*tmp)->stacka->next->content))
+			y++;
 		i++;
+		(*tmp)->stacka = (*tmp)->stacka->next;
 	}
+	if (i == y)
+		(*data)->error = ERROR_ALREADY_SORT;
+	write_error_type(*data);
 	return (0);
 }
 
