@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/07 22:41:34 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 00:29:05 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int	init_push_swap(t_data **data, int ac, char **av)
 	check_if_the_list_is_sorted(data);
 	check_double(data);
 	init_stackb(data);
-	ft_lstprint_index((*data)->stacka);
-	//printf("number elements %i\n", (*data)->nbr_arg); 
-	return (0);
+	// ft_lstprint_index((*data)->stacka);
+	ft_lstprint_stack_a_b((*data)->stacka, (*data)->stacka);
+		// printf("number elements %i\n", (*data)->nbr_arg);
+		return (0);
 }

@@ -81,11 +81,40 @@ void ft_lstprint_index(t_list *list)
 		exit(EXIT_FAILURE);
 	while (tmp != NULL)
 	{
+		ft_putstr("  ");
 		ft_putnbr(tmp->content);
-		ft_putstr("		");
+		ft_putstr("	");
 		ft_putnbr(tmp->index);
 		ft_putstr("\n");
 		tmp = tmp->next;
 	}
-	ft_putstr("____");
+	ft_putstr(" __________\n  stack a  ");
+}
+
+void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb)
+{
+	t_list *tmpa;
+	t_list *tmpb;
+
+	if (lsta == NULL || lstb == NULL)
+		exit(EXIT_FAILURE);
+	tmpa = lsta;
+	tmpb = lstb;
+	while (tmpa != NULL || tmpb != NULL)
+	{
+		ft_putstr("  ");
+		ft_putnbr(tmpa->content);
+		ft_putstr("	");
+		ft_putnbr(tmpa->index);
+		ft_putstr("		");
+		ft_putstr("  ");
+		ft_putnbr(tmpb->content);
+		ft_putstr("	");
+		ft_putnbr(tmpb->index);
+		ft_putstr("\n");
+		tmpa = tmpa->next;
+		tmpb = tmpb->next;
+	}
+	ft_putstr(" __________		__________\n");
+	ft_putstr("  stack a  		 stack b  \n");
 }

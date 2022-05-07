@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/07 22:44:56 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 00:28:36 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,9 @@ typedef struct s_data
 	void ft_lstprint(t_list *list);
 	void ft_lstprintv(t_list *list);
 	void ft_lstprint_index(t_list *list);
+	void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb);
 
-// chained list
+	// chained list
 	t_list *ft_lstnew(int content);
 	void ft_lstadd_front(t_list **alst, t_list *new);
 	t_list *ft_lstlast(t_list *lst);
