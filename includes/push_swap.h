@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/07 21:12:38 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/07 22:44:56 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_data
 /******------------------- utils ---------------------******/
 
 	int ft_str_search_char(char *str, char c);
-	long ft_atoi_long(const char *src, t_data **data);
+	int ft_atoi_long(const char *src, t_data **data);
 
 /******-------------- Error management --------------******/
 

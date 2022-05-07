@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 22:13:58 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/07 22:41:34 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void fill_stacka(t_data **data, int ac, char **av)
 	tmp = NULL;
 	while (i < ac)
 		ft_lstadd_back(&tmp, ft_lstnew(ft_atoi_long(av[i++], data)));
+		// ft_lstadd_back(&tmp, ft_lstnew(ft_atoi(av[i++])));
 	(*data)->stacka = tmp;
 }
 
@@ -50,8 +51,9 @@ int	init_push_swap(t_data **data, int ac, char **av)
 	(*data)->nbr_arg = ac - 1;
 	fill_stacka(data, ac, av);
 	check_if_the_list_is_sorted(data);
+	check_double(data);
 	init_stackb(data);
 	ft_lstprint_index((*data)->stacka);
-	//printf("number elements %i\n", (*data)->nbr_arg);
+	//printf("number elements %i\n", (*data)->nbr_arg); 
 	return (0);
 }
