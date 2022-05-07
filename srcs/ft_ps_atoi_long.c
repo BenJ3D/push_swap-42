@@ -6,18 +6,16 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:30:59 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/07 22:47:53 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/07 22:55:22 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int ft_isspace3(char *str)
+int ft_isspace3(char c)
 {
-	int i;
-
-	i = 0;
-	if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' 
+		|| c == '\f' || c == '\r')
 		return (1);
 	return (0);
 }
@@ -33,7 +31,7 @@ int ft_atoi_long(const char *src, t_data **data)
 	nb = 0;
 	sign = 1;
 	i = 0;
-	while (ft_isspace3(&str[i]) != 0)
+	while (ft_isspace3(str[i]) != 0)
 		i++;
 	if (str[i] == '-' && str[i + 1] != '+')
 	{
@@ -48,45 +46,3 @@ int ft_atoi_long(const char *src, t_data **data)
 	check_int_max_or_min(data, (nb * sign));
 	return ((int)(nb * sign));
 }
-
-// int ft_isspace3(char c)
-// {
-// 	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' 
-// 		|| c == '\f' || c == '\r')
-// 		return (1);
-// 	return (0);
-// }
-
-// long ft_atoi_long(char *src, t_data **data)
-// {
-// 	int i;
-// 	long nb;
-// 	long sign;
-// 	char *str;
-
-// 	if (src[0] == '\0')
-// 		return(0);
-// 	str = (char *)src;
-// 	nb = 0;
-// 	sign = 1;
-// 	i = 0;
-// 	while (ft_isspace3(src[i]) != 0)
-// 		i++;
-// 	if (str[i] == '-' && str[i + 1] != '+')
-// 	{
-// 		sign *= -1;
-// 		i++;
-// 	}
-// 	while (str[i] == '+')
-// 		i++;
-// 	if (str[i] == '\0')
-// 		(*data)->error = ERROR_IS_NOT_INT;
-// 	//check_is_valid_int(data, str, i);
-// 	while (str[i] >= '0' && str[i] <= '9')
-// 	{
-// 		nb = (nb * 10) + str[i] - '0';
-// 		i++;
-// 	}
-// 	//check_int_max_or_min(data, (nb * sign));
-// 	return (nb * sign);
-// }
