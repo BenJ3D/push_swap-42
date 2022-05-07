@@ -115,6 +115,6 @@ void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb)
 		tmpa = tmpa->next;
 		tmpb = tmpb->next;
 	}
-	ft_putstr(" __________		__________\n");
-	ft_putstr("  stack a  		 stack b  \n");
+	ft_putstr(" __________		__________ \n");
+	ft_putstr("  stack a  		 stack b   \n");
 }
