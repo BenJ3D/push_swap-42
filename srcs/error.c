@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/07 21:12:13 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 00:11:59 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int write_error_type(t_data *data)
 	if (data->error == ERROR && data->error != ERROR_ALREADY_SORT)
 		ft_putstr("Error\n");
 	else if (data->error == ERROR_DOUBLE)
-		ft_putstr("Error\nduplicate detected\n");
+		ft_putstr("Error\ndouble detected\n");
 	else if (data->error == ERROR_INT_MAXUP)
 		ft_putstr("Error\nnumber greater than int max detected\n");
 	else if (data->error == ERROR_INT_MINDOWN)
