@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 22:24:35 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/07 23:28:17 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,4 @@ int	main(int ac, char **av)
 	if (ac >= 2)
 		init_push_swap(&data, ac, av);
 	return (0);
-}
+} 

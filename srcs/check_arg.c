@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/07 22:45:05 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 00:05:16 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int check_double(t_data **data)
 	 // tab = (int *)malloc(sizeof(int) * ((*data)->nbr_arg));
 	while (tmplst->next != NULL) // TODO comparer les doubles
 	{
-		while (tmpcmp->next != NULL)
+		while (tmpcmp != NULL)
 		{
-			printf("debug content boucle %i lst et cmp %i vs %i\n", i, tmplst->content , tmpcmp->content);
+			// printf("debug boucle %i lst et cmp %i vs %i\n", i, tmplst->content , tmpcmp->content);
 			if (tmplst->content == tmpcmp->content)
 			{
 				(*data)->error = ERROR_DOUBLE;
@@ -41,12 +41,12 @@ int check_double(t_data **data)
 		}
 		i++; // TODO debug
 		tmplst = tmplst->next;
-		if (tmplst->next != NULL)
+		if (tmplst != NULL)
 			tmpcmp = &*tmplst->next;
 		// ft_lstprint(tmplst);
-			printf("control tmplst int = %i ---\n", tmplst->content);
+			// printf("control tmplst int = %i ---\n", tmplst->content);
 		// ft_lstprint(tmpcmp);
-			printf("control tmpcmp int = %i ---\n\n\n", tmpcmp->content);
+			// printf("control tmpcmp int = %i ---\n\n\n", tmpcmp->content);
 	}
 
 	// free (tab);
