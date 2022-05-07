@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 22:28:06 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/07 21:12:13 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,26 @@ int	write_error_type2(t_data *data)
 	return (0);
 }
 
-int	write_error_type(t_data *data)
+int write_error_type(t_data *data)
 {
-	if (data->error != NO_ERROR && data->error != ERROR_ALREADY_SORT)
+	// if (data->error != NO_ERROR && data->error != ERROR_ALREADY_SORT)
+	// 	ft_putstr("Error\n");
+	if (data->error == ERROR && data->error != ERROR_ALREADY_SORT)
 		ft_putstr("Error\n");
-	// else if (data->error == ERROR_DOUBLE)
-	// 	ft_putstr("Error\nduplicate detected\n");
-	// else if (data->error == ERROR_INT_MAXUP)
-	// 	ft_putstr("Error\nnumber greater than int max detected\n");
-	// else if (data->error == ERROR_INT_MINDOWN)
-	// 	ft_putstr("Error\nnumber less than int min detected\n");
-	// else if (data->error == ERROR_IS_NOT_INT)
-	// 	ft_putstr("Error\nInvalid int detected\n");
+	else if (data->error == ERROR_DOUBLE)
+		ft_putstr("Error\nduplicate detected\n");
+	else if (data->error == ERROR_INT_MAXUP)
+		ft_putstr("Error\nnumber greater than int max detected\n");
+	else if (data->error == ERROR_INT_MINDOWN)
+		ft_putstr("Error\nnumber less than int min detected\n");
+	else if (data->error == ERROR_IS_NOT_INT)
+		ft_putstr("Error\nInvalid int detected\n");
 	// else if (data->error == ERROR_ALREADY_SORT)
 	// 	ft_putstr("Error\nAlready sort\n");
-	//else
-		//write_error_type2(data);
+	// else
+	// write_error_type2(data);
 	if (data->error != NO_ERROR)
-		exit (0);
+		exit(0);
 	return (0);
 }
 

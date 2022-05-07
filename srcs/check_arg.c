@@ -6,15 +6,43 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/06 22:13:58 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/07 21:12:27 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	check_double(t_data **data)
+int check_double(t_data **data)
 {
+	int i;
+	int y;
+	int *tab;
+	t_list *tmplst;
+	t_list *tmpcmp;
 
+	i = 0;
+	y = 1;
+	tmplst = (*data)->stacka;
+	tmpcmp = (*data)->stacka->next;
+	// ft_lstprint(tmplst);
+	// ft_lstprint(tmpcmp);
+	// tab = (int *)malloc(sizeof(int) * ((*data)->nbr_arg));
+	while (tmplst->next != NULL) // TODO comparer les doubles
+	{
+		while (tmpcmp->next != NULL)
+		{
+			if (tmplst->content == tmpcmp->content)
+			{
+				(*data)->error = ERROR_DOUBLE;
+				write_error_type(*data);
+			}
+			tmpcmp = tmpcmp->next;
+		}
+		tmplst = tmplst->next;
+		tmpcmp = tmplst->next;
+	}
+
+	// free (tab);
 	return (0);
 }
 
