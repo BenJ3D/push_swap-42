@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 03:37:42 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 03:46:44 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	operation_sa(t_data **data)
 	t_list	*tmp3;
 	t_list	*ptr;
 
+	tmp3 = NULL;
+	ft_lstprint_stack_a_b((*data)->stacka, (*data)->stacka, "stacka", "stacka"); // TODO
 	head = (*data)->stacka;
 	tmp2 = (*data)->stacka->next;
 	tmp3 = (*data)->stacka->next->next;
