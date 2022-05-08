@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mylst.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/08 01:36:22 by bducrocq          #+#    #+#             */
+/*   Updated: 2022/05/08 01:39:11 by bducrocq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
@@ -28,6 +40,7 @@ t_list	*ft_lstnew(int content)
 		return (NULL);
 	tmp->content = content;
 	tmp->index = 0;
+	tmp->bsort = FALSE;
 	tmp->next = NULL;
 	return (tmp);
 }
@@ -91,7 +104,7 @@ void ft_lstprint_index(t_list *list)
 	ft_putstr(" __________\n  stack a  ");
 }
 
-void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb)
+void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb)
 {
 	t_list *tmpa;
 	t_list *tmpb;
@@ -112,9 +125,11 @@ void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb)
 		ft_putstr("	");
 		ft_putnbr(tmpb->index);
 		ft_putstr("\n");
+		if (tmpa->next == NULL || tmpb->next == NULL)
+			break ;
 		tmpa = tmpa->next;
 		tmpb = tmpb->next;
 	}
-	ft_putstr(" __________		__________ \n");
-	ft_putstr("  stack a  		 stack b   \n");
+	printf(" __________		__________ \n");
+	printf("  %s  		 %s   \n\n", nama, namb);
 }

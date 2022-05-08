@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 00:28:36 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 01:38:02 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,18 @@ enum e_error
 
 /****----------- struct lst -----------****/
 
+enum e_bool
+{
+	FALSE,
+	TRUE
+};
+
 typedef struct s_list
 {
 	int				content;
 	struct s_list	*next;
 	int				index;
+	enum e_bool		bsort;
 }					t_list;
 
 /****----------- struct -----------****/
@@ -55,8 +62,9 @@ typedef struct s_data
 
 /******-----------------push_swap-------------------******/
 
-	void fill_stacka(t_data **data, int ac, char **av);
-	int init_push_swap(t_data **data, int ac, char **av);
+	void	fill_stacka(t_data **data, int ac, char **av);
+	int		init_push_swap(t_data **data, int ac, char **av);
+	void	define_index_in_order_stack(t_data	**data);
 
 /******------------------- utils ---------------------******/
 
@@ -77,7 +85,7 @@ typedef struct s_data
 	void ft_lstprint(t_list *list);
 	void ft_lstprintv(t_list *list);
 	void ft_lstprint_index(t_list *list);
-	void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb);
+	void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb);
 
 	// chained list
 	t_list *ft_lstnew(int content);
