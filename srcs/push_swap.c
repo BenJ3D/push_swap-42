@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 19:09:12 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 21:15:26 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	define_index_in_order_stack(t_data *data) //TODO: NORM!!
 		tmplst = headlst;
 		i++;
 	}
-	// ft_lstprint_stack_a_b(tmplst, headlst, "tmplst", "headlst"); // TODO
 }
 
 void init_stackb(t_data *data)
@@ -106,9 +105,9 @@ int	init_push_swap(t_data *data, int ac, char **av)
 	check_if_the_list_is_sorted(data);
 	check_double(data);
 	define_index_in_order_stack(data);
-	operation_swap(&data->stacka);
+	op_sa(data); //TODO:
 	init_stackb(data);
-	//ft_lstprint_stack_a_b((data)->stacka, (data)->stacka, "stack a", "stack a");
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stacka, "stack a", "stack a");
 	return (0);
 }
 

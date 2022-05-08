@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 19:08:41 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 21:08:28 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,20 @@ typedef struct s_data
 	enum e_error	error;
 }				t_data;
 
-/******-----------------push_swap-------------------******/
+/******----------------- push_swap -------------------******/
 
 	void	fill_stacka(t_data *data, int ac, char **av);
 	int		init_push_swap(t_data *data, int ac, char **av);
 	void	define_index_in_order_stack(t_data	*data);
+	
+/******----------------- operations -------------------******/
+	
+	void op_sa(t_data *data);
+	void op_sb(t_data *data);
+	void op_ss(t_data *data);
+	void op_ra(t_data *data);
+	void op_rb(t_data *data);
+	void op_rr(t_data *data);
 
 /******-------------- Error management --------------******/
 
@@ -86,6 +95,7 @@ typedef struct s_data
 
 /******-------------- my_lst function --------------******/
 
+	int	ft_lstsize(t_list *lst);
 	void ft_lstprint(t_list *list);
 	void ft_lstprintv(t_list *list);
 	void ft_lstprint_index(t_list *list);

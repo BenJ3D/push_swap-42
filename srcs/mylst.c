@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 01:36:22 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 18:29:29 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 19:33:25 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,19 @@ void ft_lstprintv(t_list *list)
 		tmp = tmp->next;
 	}
 	ft_putstr("__");
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	size_t	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
 
 void ft_lstprint_index(t_list *list)
