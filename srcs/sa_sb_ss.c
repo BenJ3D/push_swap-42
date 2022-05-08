@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 03:33:34 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 03:37:42 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	operation_sa(t_data **data)
 	tmp2 = (*data)->stacka->next;
 	tmp3 = (*data)->stacka->next->next;
 	ft_lstprint_stack_a_b((*data)->stacka, tmp3, "stacka", "tmp3"); // TODO
-	(*data)->stacka->next = tmp3;
-	(*data)->stacka->next = tmp3;
+	(*data)->stacka->next = (*data)->stacka;
+	(*data)->stacka = tmp3;
+	ft_lstprint_stack_a_b((*data)->stacka, tmp3, "stacka", "tmp3"); // TODO
 	
 }
