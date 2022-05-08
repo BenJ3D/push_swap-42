@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 15:53:37 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 19:09:12 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ int	find_min_in_lst(t_list *list)
 	return (min);
 }
 
-void	define_index_in_order_stack(t_data **data) //TODO NORM!!
+void	define_index_in_order_stack(t_data *data) //TODO: NORM!!
 {
 	int		i;
 	int		nb_min;
 	t_list	*tmplst;
 	t_list	*headlst;
 	
-	tmplst = (*data)->stacka;
+	tmplst = (data)->stacka;
 	headlst = tmplst;
 	nb_min = tmplst->content;
 	i = 0;
-	while (i < (*data)->nbr_arg)
+	while (i < (data)->nbr_arg)
 	{
 		while(tmplst != NULL) // chope le nb min pas encore traiter
 		{
@@ -66,9 +66,9 @@ void	define_index_in_order_stack(t_data **data) //TODO NORM!!
 	// ft_lstprint_stack_a_b(tmplst, headlst, "tmplst", "headlst"); // TODO
 }
 
-void init_stackb(t_data **data)
+void init_stackb(t_data *data)
 {
-	(*data)->stackb = NULL;
+	(data)->stackb = NULL;
 }
 
 /**
@@ -78,7 +78,7 @@ void init_stackb(t_data **data)
  * @param ac argc
  * @param av argv
  */
-void	fill_stacka(t_data **data, int ac, char **av)
+void	fill_stacka(t_data *data, int ac, char **av)
 {
 	int i;
 	t_list *tmp;
@@ -87,8 +87,7 @@ void	fill_stacka(t_data **data, int ac, char **av)
 	tmp = NULL;
 	while (i < ac)
 		ft_lstadd_back(&tmp, ft_lstnew(ft_atoi_long(av[i++], data)));
-		// ft_lstadd_back(&tmp, ft_lstnew(ft_atoi(av[i++])));
-	(*data)->stacka = tmp;
+	(data)->stacka = tmp;
 }
 
 /**
@@ -99,17 +98,17 @@ void	fill_stacka(t_data **data, int ac, char **av)
  * @param av
  * @return int
  */
-int	init_push_swap(t_data **data, int ac, char **av)
+int	init_push_swap(t_data *data, int ac, char **av)
 {
-	(*data)->error = NO_ERROR;
-	(*data)->nbr_arg = ac - 1;
+	(data)->error = NO_ERROR;
+	data->nbr_arg = ac - 1;
 	fill_stacka(data, ac, av);
 	check_if_the_list_is_sorted(data);
 	check_double(data);
 	define_index_in_order_stack(data);
-	//operation_sa(data);
+	operation_swap(&data->stacka);
 	init_stackb(data);
-	ft_lstprint_stack_a_b((*data)->stacka, (*data)->stacka, "stack a", "stack a");
+	//ft_lstprint_stack_a_b((data)->stacka, (data)->stacka, "stack a", "stack a");
 	return (0);
 }
 

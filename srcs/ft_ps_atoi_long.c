@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ps_atoi_long.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:30:59 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/07 22:55:22 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:04:04 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int ft_isspace3(char c)
 	return (0);
 }
 
-int ft_atoi_long(const char *src, t_data **data)
+int ft_atoi_long(const char *src, t_data *data)
 {
 	int i;
 	long nb;

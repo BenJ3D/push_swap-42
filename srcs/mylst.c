@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mylst.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 01:36:22 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 01:39:11 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 18:29:29 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,36 @@ void ft_lstprint_index(t_list *list)
 }
 
 void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb)
+{
+	t_list *tmpa;
+	t_list *tmpb;
+
+	if (lsta == NULL || lstb == NULL)
+		exit(EXIT_FAILURE);
+	tmpa = lsta;
+	tmpb = lstb;
+	while (tmpa != NULL || tmpb != NULL)
+	{
+		ft_putstr("  ");
+		ft_putnbr(tmpa->content);
+		ft_putstr("	");
+		ft_putnbr(tmpa->index);
+		ft_putstr("		");
+		ft_putstr("  ");
+		ft_putnbr(tmpb->content);
+		ft_putstr("	");
+		ft_putnbr(tmpb->index);
+		ft_putstr("\n");
+		if (tmpa->next == NULL || tmpb->next == NULL)
+			break ;
+		tmpa = tmpa->next;
+		tmpb = tmpb->next;
+	}
+	printf(" __________		__________ \n");
+	printf("  %s  		 %s   \n\n", nama, namb);
+}
+
+void ft_lstprint_stack_a_b_double(t_list *lsta, t_list *lstb, char *nama, char *namb)
 {
 	t_list *tmpa;
 	t_list *tmpb;

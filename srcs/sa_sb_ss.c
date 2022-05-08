@@ -3,30 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   sa_sb_ss.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 03:46:44 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 19:22:37 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	operation_sa(t_data **data)
+void	operation_swap(t_list **lst)
 {
-	t_list	*head;
-	t_list	*tmp2;
-	t_list	*tmp3;
-	t_list	*ptr;
-
-	tmp3 = NULL;
-	ft_lstprint_stack_a_b((*data)->stacka, (*data)->stacka, "stacka", "stacka"); // TODO
-	head = (*data)->stacka;
-	tmp2 = (*data)->stacka->next;
-	tmp3 = (*data)->stacka->next->next;
-	ft_lstprint_stack_a_b((*data)->stacka, tmp3, "stacka", "tmp3"); // TODO
-	(*data)->stacka->next = (*data)->stacka;
-	(*data)->stacka = tmp3;
-	ft_lstprint_stack_a_b((*data)->stacka, tmp3, "stacka", "tmp3"); // TODO
+	t_list	*tmp;
 	
+	tmp = (*lst)->next;
+	(*lst)->next = (*lst)->next->next;
+	tmp->next = *lst;
+	*lst = tmp;
+	
+	ft_lstprint_stack_a_b((*lst), tmp, "stack a", "   tmp  ");
+
 }
+
+	// ft_lstprint_stack_a_b((*data)->stacka, (*data)->stacka, "stacka", "stacka"); // TODO
+	// head = (*data)->stacka;
+	// tmp2 = (*data)->stacka->next;
+	// tmp3 = (*data)->stacka->next->next;
+	// ft_lstprint_stack_a_b((*data)->stacka, tmp3, "stacka", "tmp3"); // TODO
+	// (*data)->stacka->next = (*data)->stacka;
+	// (*data)->stacka = tmp3;
