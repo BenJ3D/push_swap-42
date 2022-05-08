@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 15:46:55 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 15:53:37 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,4 @@ int	init_push_swap(t_data **data, int ac, char **av)
 	return (0);
 }
 
-// coucou test
+// coucou 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/07 23:28:17 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 15:56:32 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 int	main(int ac, char **av)
 {
 	t_data	*data;
-
+	
+	data = malloc(sizeof(t_data));
+	ft_bzero(data, sizeof(t_data));
 	if (ac >= 2)
 		init_push_swap(&data, ac, av);
+	free(data);
 	return (0);
 } 
