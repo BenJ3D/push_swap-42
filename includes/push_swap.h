@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 01:38:02 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 03:18:32 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,11 @@ typedef struct s_data
 	int		init_push_swap(t_data **data, int ac, char **av);
 	void	define_index_in_order_stack(t_data	**data);
 
-/******------------------- utils ---------------------******/
+/******-------------- Error management --------------******/
+
+	void operation_sa(t_data **data);
+
+	/******------------------- utils ---------------------******/
 
 	int ft_str_search_char(char *str, char c);
 	int ft_atoi_long(const char *src, t_data **data);

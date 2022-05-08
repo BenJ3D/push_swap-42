@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 02:54:29 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/08 03:23:41 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	find_min_in_lst(t_list *list)
 	return (min);
 }
 
-void	define_index_in_order_stack(t_data **data)
+void	define_index_in_order_stack(t_data **data) //TODO NORM!!
 {
 	int		i;
 	int		nb_min;
@@ -37,15 +37,6 @@ void	define_index_in_order_stack(t_data **data)
 	headlst = tmplst;
 	nb_min = tmplst->content;
 	i = 0;
-
-	//TODO DEBUG
-	tmplst = tmplst->next->next->next->next;
-	tmplst->index = 0;
-	// ft_lstprint_stack_a_b(tmplst, headlst, "tmplst", "headlst");
-	tmplst = headlst;
-	// ft_lstprint_stack_a_b(tmplst, headlst, "tmplst", "headlst");
-	//TODO FIN DEBUG
-	
 	while (i < (*data)->nbr_arg)
 	{
 		while(tmplst != NULL) // chope le nb min pas encore traiter
@@ -72,7 +63,7 @@ void	define_index_in_order_stack(t_data **data)
 		tmplst = headlst;
 		i++;
 	}
-	ft_lstprint_stack_a_b(tmplst, headlst, "tmplst", "headlst"); // TODO
+	// ft_lstprint_stack_a_b(tmplst, headlst, "tmplst", "headlst"); // TODO
 }
 
 void init_stackb(t_data **data)
@@ -116,7 +107,8 @@ int	init_push_swap(t_data **data, int ac, char **av)
 	check_if_the_list_is_sorted(data);
 	check_double(data);
 	define_index_in_order_stack(data);
+	operation_sa(data);
 	init_stackb(data);
-	// ft_lstprint_stack_a_b((*data)->stacka, (*data)->stacka);
-		return (0);
+	//ft_lstprint_stack_a_b((*data)->stacka, (*data)->stacka, "stack a", "stack a");
+	return (0);
 }

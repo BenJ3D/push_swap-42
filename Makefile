@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/05/07 22:06:20 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/08 03:20:10 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRC_NAME =	main.c			\
 			error.c			\
 			mylst.c			\
 			push_swap.c		\
-			ft_ps_atoi_long.c
+			ft_ps_atoi_long.c \
+			sa_sb_ss.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
