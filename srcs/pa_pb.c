@@ -1,48 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra_rb_rr.c                                         :+:      :+:    :+:   */
+/*   pa_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/10 15:45:22 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:42:54 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	op_ra(t_data *data)
+void	op_pa(t_data *data)
 {
-	operation_rotate(&data->stacka);
-	ft_putstr("ra\n");
+	operation_push(&data->stacka, &data->stackb);
+	ft_putstr("pa\n");
 }
 
-void	op_rb(t_data *data)
+void	op_pb(t_data *data)
 {
-	operation_rotate(&data->stackb);
-	ft_putstr("rb\n");
+	operation_push(&data->stackb, &data->stacka);
+	ft_putstr("pb\n");
 }
 
-void	op_rr(t_data *data)
-{
-	operation_rotate(&data->stacka);
-	operation_rotate(&data->stackb);
-	ft_putstr("rr\n");
-}
-
-void	operation_rotate(t_list **lst)
+void	operation_push(t_list **lstdst, t_list **lstsrc) //TODO: gestion si un seul element
 {
 	t_list	*tmp;
-	t_list	*tmp2;
 	
-	if (ft_lstsize(*lst) < 2)
+	if (ft_lstsize(*lstsrc) < 1)
 		return ;
-	tmp = (*lst);
-	tmp2 = (*lst);
-	while(tmp2->next)
-		tmp2 = tmp2->next;
-	tmp2->next = tmp;
-	*lst = (*lst)->next;
-	tmp->next = NULL;
+	tmp = (*lstsrc)->next;
+	(*lstsrc)->next = (*lstsrc)->next->next;
+	tmp->next = *lstsrc;
+	*lstsrc = tmp;
 }

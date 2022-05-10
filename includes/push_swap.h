@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 21:08:28 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:42:35 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,25 @@ typedef struct s_data
 	void op_sa(t_data *data);
 	void op_sb(t_data *data);
 	void op_ss(t_data *data);
+	
 	void op_ra(t_data *data);
 	void op_rb(t_data *data);
 	void op_rr(t_data *data);
 
+	void op_rra(t_data *data);
+	void op_rrb(t_data *data);
+	void op_rrr(t_data *data);
+
+	void op_pa(t_data *data);
+	void op_pb(t_data *data);
+
+
 /******-------------- Error management --------------******/
 
-	void operation_swap(t_list **lst);
+	void	operation_swap(t_list **lst);
+	void	operation_rotate(t_list **lst);
+	void	operation_reverse_rotate(t_list **lst);
+	void	operation_push(t_list **lstdst, t_list **lstsrc);
 
 	/******------------------- utils ---------------------******/
 

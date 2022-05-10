@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 01:36:22 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 19:33:25 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:02:56 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,27 +121,62 @@ void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb)
 {
 	t_list *tmpa;
 	t_list *tmpb;
+	int lena;
+	int lenb;
+	int i;
 
-	if (lsta == NULL || lstb == NULL)
+	lena = ft_lstsize(lsta);
+	lenb = ft_lstsize(lstb);
+
+	if (lsta == NULL && lstb == NULL)
 		exit(EXIT_FAILURE);
-	tmpa = lsta;
-	tmpb = lstb;
-	while (tmpa != NULL || tmpb != NULL)
+	if (lena > 0)
+		tmpa = lsta;
+	ft_lstprint(tmpa);
+	if (lenb > 0)
+		tmpb = lstb;
+	if (lena > lenb)
+		i = lena;
+	else
+		i = lenb;
+	while (i > 0)
 	{
 		ft_putstr("  ");
-		ft_putnbr(tmpa->content);
+		if (tmpa != NULL)
+			ft_putnbr(tmpa->content);
+		else
+			ft_putchar('.');
+
 		ft_putstr("	");
-		ft_putnbr(tmpa->index);
+		
+		if (tmpa != NULL)
+			ft_putnbr(tmpa->index);
+		else
+			ft_putchar('.');
+			
 		ft_putstr("		");
 		ft_putstr("  ");
-		ft_putnbr(tmpb->content);
+		
+		if (tmpb != NULL)
+			ft_putnbr(tmpb->content);
+		else
+			ft_putchar('.');
+			
 		ft_putstr("	");
-		ft_putnbr(tmpb->index);
+		
+		if (tmpb != NULL)
+			ft_putnbr(tmpb->index);
+		else
+			ft_putchar('.');
+			
+		printf("OH ! \n");
 		ft_putstr("\n");
-		if (tmpa->next == NULL || tmpb->next == NULL)
+		if (tmpa == NULL || tmpb->next == NULL)
 			break ;
 		tmpa = tmpa->next;
-		tmpb = tmpb->next;
+		if (tmpb)
+			tmpb = tmpb->next;
+		i++;
 	}
 	printf(" __________		__________ \n");
 	printf("  %s  		 %s   \n\n", nama, namb);
