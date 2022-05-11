@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/10 19:03:38 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:46:26 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,6 @@ int	init_push_swap(t_data *data, int ac, char **av)
 	op_pa(data);
 	
 	init_stackb(data);
-	ft_lstprint_stack_a_b((data)->stacka, (data)->stacka, "stack a", "stack b");
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	return (0);
 }

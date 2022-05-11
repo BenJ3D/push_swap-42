@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 01:36:22 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/10 19:02:56 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:46:00 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,12 +127,12 @@ void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb)
 
 	lena = ft_lstsize(lsta);
 	lenb = ft_lstsize(lstb);
-
+	tmpa = NULL;
+	tmpb = NULL;
 	if (lsta == NULL && lstb == NULL)
 		exit(EXIT_FAILURE);
 	if (lena > 0)
 		tmpa = lsta;
-	ft_lstprint(tmpa);
 	if (lenb > 0)
 		tmpb = lstb;
 	if (lena > lenb)
@@ -169,14 +169,13 @@ void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb)
 		else
 			ft_putchar('.');
 			
-		printf("OH ! \n");
 		ft_putstr("\n");
-		if (tmpa == NULL || tmpb->next == NULL)
+		if (tmpa == NULL && tmpb== NULL)
 			break ;
 		tmpa = tmpa->next;
 		if (tmpb)
 			tmpb = tmpb->next;
-		i++;
+		i--;
 	}
 	printf(" __________		__________ \n");
 	printf("  %s  		 %s   \n\n", nama, namb);
