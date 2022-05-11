@@ -42,8 +42,8 @@
 *.idb
 *.pdb
 *.DS*
-*.vs*
-*.json
+
+
 
 # Kernel Module Compile Results
 *.mod*
