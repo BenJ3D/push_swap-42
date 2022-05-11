@@ -6,33 +6,9 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 20:43:58 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:14:05 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/**
- * @brief Prend une str et cherche si le char c est dedans
- * 
- * @param str 
- * @param c 
- * @return int return number result
- */
-int	ft_str_search_char(char *str, char c)
-{
-	int	i;
-	int	counter;
-
-	i = 0;
-	counter = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			counter++;
-		i++;
-	}
-	if (counter > 0)
-		return (counter);
-	return (0);
-}

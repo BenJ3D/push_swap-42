@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/10 15:45:22 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:38:41 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	op_ra(t_data *data)
 {
-	operation_rotate(&data->stacka);
-	ft_putstr("ra\n");
+	if (!(operation_rotate(&data->stacka)))
+		ft_putstr("ra\n");
 }
 
 void	op_rb(t_data *data)
 {
-	operation_rotate(&data->stackb);
-	ft_putstr("rb\n");
+	if (!(operation_rotate(&data->stackb)))
+		ft_putstr("rb\n");
 }
 
 void	op_rr(t_data *data)
@@ -31,13 +31,13 @@ void	op_rr(t_data *data)
 	ft_putstr("rr\n");
 }
 
-void	operation_rotate(t_list **lst)
+int	operation_rotate(t_list **lst)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
 	
 	if (ft_lstsize(*lst) < 2)
-		return ;
+		return (1);
 	tmp = (*lst);
 	tmp2 = (*lst);
 	while(tmp2->next)
@@ -45,4 +45,5 @@ void	operation_rotate(t_list **lst)
 	tmp2->next = tmp;
 	*lst = (*lst)->next;
 	tmp->next = NULL;
+	return (0);
 }

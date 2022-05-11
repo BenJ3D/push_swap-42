@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa_sb_ss.c                                         :+:      :+:    :+:   */
+/*   sort_big_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 17:41:41 by bducrocq         ###   ########.fr       */
+/*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
+/*   Updated: 2022/05/11 19:44:36 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	op_sa(t_data *data)
+int sort_big_stack(t_data *data)
 {
-	if (!(operation_swap(&data->stacka)))
-		ft_putstr("sa\n");
-}
+	printf("start big sort\n");
+	int	i;
+	t_list	*tmpa;
+	int	y;
 
-void	op_sb(t_data *data)
-{
-	if (!(operation_swap(&data->stackb)))
-		ft_putstr("sb\n");
-}
-
-int		operation_swap(t_list **lst)
-{
-	t_list	*tmp;
-	
-	if (ft_lstsize(*lst) < 2)
-		return (1);
-	tmp = (*lst)->next;
-	(*lst)->next = (*lst)->next->next;
-	tmp->next = *lst;
-	*lst = tmp;
+	tmpa = data->stacka;
+	i = 0;
+	y = 0;
+	while(y < 10)
+	{
+		if ((tmpa->index << i) & 1)
+			op_pb(data);
+		op_ra(data);
+		tmpa = data->stacka;
+		y++;
+		// if (check_if_the_list_is_sorted(data))
+		// 	break;
+	}
 	return (0);
 }

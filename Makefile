@@ -6,7 +6,7 @@
 #    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/05/10 16:15:17 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/11 19:01:07 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ SRC_NAME =	main.c				\
 			sa_sb_ss.c			\
 			ra_rb_rr.c			\
 			rra_rrb_rrr.c		\
-			pa_pb.c
+			pa_pb.c				\
+			sort_big_stack.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

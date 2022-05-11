@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 16:08:44 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:22:58 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int check_double(t_data *data)
 	return (0);
 }
 
-int	check_if_the_list_is_sorted(t_data *data) //TODO
+int	check_if_the_list_is_sorted(t_data *data)
 {
 	int	i;
 	int	y;
@@ -55,8 +55,10 @@ int	check_if_the_list_is_sorted(t_data *data) //TODO
 		tmp = tmp->next;
 	}
 	if (i == y)
+	{
 		(data)->error = ERROR_ALREADY_SORT;
-	write_error_type(data);
+		return (1);
+	}
 	return (0);
 }
 

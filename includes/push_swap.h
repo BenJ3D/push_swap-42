@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/10 17:42:35 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:03:01 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,27 +83,29 @@ typedef struct s_data
 	void op_pa(t_data *data);
 	void op_pb(t_data *data);
 
+	int	operation_swap(t_list **lst);
+	int	operation_rotate(t_list **lst);
+	int	operation_reverse_rotate(t_list **lst);
+	int	operation_push(t_list **lstdst, t_list **lstsrc);
+
+
+/******-------------- Alog function --------------******/
+
+	int sort_big_stack(t_data *data);
+
+/******------------------- utils ---------------------******/
+
+	int	ft_str_search_char(char *str, char c);
+	int	ft_atoi_long(const char *src, t_data *data);
 
 /******-------------- Error management --------------******/
 
-	void	operation_swap(t_list **lst);
-	void	operation_rotate(t_list **lst);
-	void	operation_reverse_rotate(t_list **lst);
-	void	operation_push(t_list **lstdst, t_list **lstsrc);
-
-	/******------------------- utils ---------------------******/
-
-	int ft_str_search_char(char *str, char c);
-	int ft_atoi_long(const char *src, t_data *data);
-
-/******-------------- Error management --------------******/
-
-	int check_double(t_data *data);
-	int check_if_the_list_is_sorted(t_data *data);
-	int check_arg_is_valid(int ac, char **av);
-	int check_is_valid_int(t_data *data, char *str, int i);
-	int check_int_max_or_min(t_data *data, long nb);
-	int write_error_type(t_data *data);
+	int	check_double(t_data *data);
+	int	check_if_the_list_is_sorted(t_data *data);
+	int	check_arg_is_valid(int ac, char **av);
+	int	check_is_valid_int(t_data *data, char *str, int i);
+	int	check_int_max_or_min(t_data *data, long nb);
+	int	write_error_type(t_data *data);
 
 /******-------------- my_lst function --------------******/
 
