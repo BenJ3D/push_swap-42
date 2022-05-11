@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 14:46:26 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:18:00 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,18 +102,16 @@ int	init_push_swap(t_data *data, int ac, char **av)
 	(data)->error = NO_ERROR;
 	data->nbr_arg = ac - 1;
 	fill_stacka(data, ac, av);
+	init_stackb(data);
 	check_if_the_list_is_sorted(data);
 	check_double(data);
 	define_index_in_order_stack(data);
-	op_sa(data);
-	//ft_lstprint_stack_a_b((data)->stacka, (data)->stacka, "stack a", "stack a");
-	op_ra(data);
-	//ft_lstprint_stack_a_b((data)->stacka, (data)->stacka, "stack a", "stack a");
-	op_rra(data);
-	//ft_lstprint_stack_a_b((data)->stacka, (data)->stacka, "stack a", "stack a");
-	op_pa(data);
-	
-	init_stackb(data);
+	// op_sa(data);
+	// op_ra(data);
+	// op_rra(data);
+	// op_rra(data);
+	// op_rra(data);
+	op_pb(data);
 	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	return (0);
 }

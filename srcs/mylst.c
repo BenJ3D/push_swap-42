@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 01:36:22 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 14:46:00 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:23:44 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,8 @@ void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb)
 		ft_putstr("\n");
 		if (tmpa == NULL && tmpb== NULL)
 			break ;
-		tmpa = tmpa->next;
+		if (tmpa)
+			tmpa = tmpa->next;
 		if (tmpb)
 			tmpb = tmpb->next;
 		i--;

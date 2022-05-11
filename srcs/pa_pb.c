@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/10 17:42:54 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:20:52 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,18 @@ void	op_pb(t_data *data)
 	ft_putstr("pb\n");
 }
 
-void	operation_push(t_list **lstdst, t_list **lstsrc) //TODO: gestion si un seul element
+void	operation_push(t_list **lstdst, t_list **lstsrc)
 {
-	t_list	*tmp;
-	
-	if (ft_lstsize(*lstsrc) < 1)
+	t_list	*tmpsrc;
+	t_list	*tmpdst;
+	int lensrc;
+	int lendst;
+	int i;
+
+	lensrc = ft_lstsize(*lstsrc);
+	lendst = ft_lstsize(*lstdst);
+	if (lensrc < 1)
 		return ;
-	tmp = (*lstsrc)->next;
-	(*lstsrc)->next = (*lstsrc)->next->next;
-	tmp->next = *lstsrc;
-	*lstsrc = tmp;
+	(*lstdst) = (*lstsrc);
+	(*lstsrc) = (*lstsrc)->next->next;
 }
