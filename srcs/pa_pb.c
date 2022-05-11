@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 16:20:52 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:58:53 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	operation_push(t_list **lstdst, t_list **lstsrc)
 {
 	t_list	*tmpsrc;
 	t_list	*tmpdst;
+	t_list	*tmp;
 	int lensrc;
 	int lendst;
 	int i;
@@ -36,6 +37,9 @@ void	operation_push(t_list **lstdst, t_list **lstsrc)
 	lendst = ft_lstsize(*lstdst);
 	if (lensrc < 1)
 		return ;
-	(*lstdst) = (*lstsrc);
-	(*lstsrc) = (*lstsrc)->next->next;
+	
+	tmp = (*lstsrc);
+	(*lstsrc) = (*lstsrc)->next;
+	tmp->next = (*lstdst);
+	(*lstdst) = tmp;
 }
