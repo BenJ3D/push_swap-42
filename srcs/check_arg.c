@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 19:22:58 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:31:57 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int check_double(t_data *data)
 	return (0);
 }
 
-int	check_if_the_list_is_sorted(t_data *data)
+int	check_if_the_list_is_sort(t_data *data)
 {
 	int	i;
 	int	y;
@@ -61,6 +61,34 @@ int	check_if_the_list_is_sorted(t_data *data)
 	}
 	return (0);
 }
+
+int	check_stacka_is_sort(t_data *data)
+{
+	int	i;
+	int	y;
+	t_list	*tmp;
+	int dbarg = (data)->nbr_arg;
+
+	tmp = (data)->stacka;
+	if (tmp->next == NULL)
+		return (0);
+	i = 1;
+	y = 1;
+	while (tmp->next)
+	{
+		if ((tmp->content < (tmp)->next->content))
+			y++;
+		i++;
+		tmp = tmp->next;
+	}
+	if (i == y)
+	{
+		return (1);
+	}
+	return (0);
+}
+
+
 
 int	check_is_valid_int(t_data *data, char *str, int i)
 {

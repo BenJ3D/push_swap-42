@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 19:44:36 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:40:22 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,39 @@
 int sort_big_stack(t_data *data)
 {
 	printf("start big sort\n");
-	int	i;
+	int		i;
 	t_list	*tmpa;
-	int	y;
-
+	int		lena;
+	
+	lena = ft_lstsize(data->stacka);
 	tmpa = data->stacka;
 	i = 0;
-	y = 0;
-	while(y < 10)
+	while (lena >= 0)
 	{
-		if ((tmpa->index << i) & 1)
+		if (check_stacka_is_sort(data) == 1 && lena == 0)
+		{
+			printf("stacka est triée\n");
+			break ;
+		}
+		if (lena == 0)
+		{
+			while (ft_lstsize(data->stackb) > 0)
+				op_pa(data);
+			i++;
+			lena = ft_lstsize(data->stacka);
+		}
+		if ((tmpa->index >> i) & 1)
 			op_pb(data);
 		op_ra(data);
 		tmpa = data->stacka;
-		y++;
-		// if (check_if_the_list_is_sorted(data))
-		// 	break;
+		lena--;
 	}
+	return (0);
+}
+
+int	sort_three_arg(t_data *data)
+{
+	
+	
 	return (0);
 }

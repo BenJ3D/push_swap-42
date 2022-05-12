@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 19:33:23 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:59:08 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,29 @@ int	find_min_in_lst(t_list *list)
 	return (min);
 }
 
-void	define_index_in_order_stack(t_data *data) //TODO: NORM!!
+void	define_index_norm(t_list *tmplst, t_list *headlst, int i, int *nb_min)
+{
+	
+	while(tmplst != NULL) // chope le nb min pas encore traiter
+		{
+			if ((tmplst->content < *nb_min) && tmplst->bsort == FALSE)
+				*nb_min = tmplst->content;
+			tmplst = tmplst->next;
+		}
+		tmplst = headlst;
+		while (tmplst) // cherche le nb min dans lst et fou son index
+		{
+			if (tmplst->content == *nb_min)
+			{
+				tmplst->index = i;
+				tmplst->bsort = TRUE;
+				break ;
+			}
+			tmplst = tmplst->next;
+		}
+}
+
+void	define_index_in_order_stack(t_data *data)
 {
 	int		i;
 	int		nb_min;
@@ -39,23 +61,7 @@ void	define_index_in_order_stack(t_data *data) //TODO: NORM!!
 	i = 0;
 	while (i < (data)->nbr_arg)
 	{
-		while(tmplst != NULL) // chope le nb min pas encore traiter
-		{
-			if ((tmplst->content < nb_min) && tmplst->bsort == FALSE)
-				nb_min = tmplst->content;
-			tmplst = tmplst->next;
-		}
-		tmplst = headlst;
-		while (tmplst) // cherche le nb min dans lst et fou son index
-		{
-			if (tmplst->content == nb_min)
-			{
-				tmplst->index = i;
-				tmplst->bsort = TRUE;
-				break ;
-			}
-			tmplst = tmplst->next;
-		}
+		define_index_norm(tmplst, headlst, i, &nb_min);
 		tmplst = headlst;
 		while(tmplst->bsort != FALSE && tmplst->next != NULL)
 			tmplst = tmplst->next;
@@ -103,7 +109,7 @@ int	init_push_swap(t_data *data, int ac, char **av)
 	data->nbr_arg = ac - 1;
 	fill_stacka(data, ac, av);
 	init_stackb(data);
-	if (check_if_the_list_is_sorted(data))
+	if (check_if_the_list_is_sort(data))
 		write_error_type(data);
 	check_double(data);
 	define_index_in_order_stack(data);
