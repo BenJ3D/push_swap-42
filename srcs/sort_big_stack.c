@@ -6,13 +6,13 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/12 19:40:22 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/12 21:19:20 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int sort_big_stack(t_data *data)
+int sort_big_stack(t_data *data) //TODO:
 {
 	printf("start big sort\n");
 	int		i;
@@ -47,7 +47,28 @@ int sort_big_stack(t_data *data)
 
 int	sort_three_arg(t_data *data)
 {
-	
-	
+	int	a;
+	int	b;
+	int	c;
+
+	a = data->stacka->content;
+	b = data->stacka->next->content;
+	c = data->stacka->next->next->content;
+	if (b < a && b < c && a < c)
+		op_sa(data);
+	else if (c < b && b < a)
+	{
+		op_sa(data);
+		op_rra(data);
+	}
+	else if (b < a && b < c && a > c)
+		op_ra(data);
+	else if (a < b && b > c && a < c)
+	{
+		op_sa(data);
+		op_ra(data);
+	}
+	else if (a < b && b > c && a > c)
+		op_rra(data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/12 19:59:08 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/12 21:47:01 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,9 +113,21 @@ int	init_push_swap(t_data *data, int ac, char **av)
 		write_error_type(data);
 	check_double(data);
 	define_index_in_order_stack(data);
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "arg A", ".......");
+	op_pb(data);
 	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
-	sort_big_stack(data);
+	op_pb(data);
 	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
+
+	
+	
+	// if (data->nbr_arg == 2)
+	// 	op_sa(data);
+	// else if (data->nbr_arg == 3)
+	// 	sort_three_arg(data);
+	// else
+	// 	sort_big_stack(data);
+	// ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	
 	return (0);
 }

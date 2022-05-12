@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/12 19:18:19 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/12 21:19:32 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ typedef struct s_data
 /******-------------- Alog function --------------******/
 
 	int sort_big_stack(t_data *data);
+	int	sort_three_arg(t_data *data);
+
 
 /******------------------- utils ---------------------******/
 
