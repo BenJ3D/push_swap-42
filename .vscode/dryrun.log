@@ -1,0 +1,32 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/ben/projet/push_swap'
+make -C./libs/libft/
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/main.o -c srcs/main.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/utils.o -c srcs/utils.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/check_arg.o -c srcs/check_arg.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/error.o -c srcs/error.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/mylst.o -c srcs/mylst.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/push_swap.o -c srcs/push_swap.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/ft_ps_atoi_long.o -c srcs/ft_ps_atoi_long.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/sa_sb_ss.o -c srcs/sa_sb_ss.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/ra_rb_rr.o -c srcs/ra_rb_rr.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/rra_rrb_rrr.o -c srcs/rra_rrb_rrr.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/pa_pb.o -c srcs/pa_pb.c
+mkdir ./objs/ 2> /dev/null || true
+gcc  -fsanitize=address -g3 -I./includes/ -o objs/sort_big_stack.o -c srcs/sort_big_stack.c
+echo "\033[34mCreation of push_swap on linux ...\033[0m"
+gcc  -fsanitize=address -g3 ./objs/main.o ./objs/utils.o ./objs/check_arg.o ./objs/error.o ./objs/mylst.o ./objs/push_swap.o ./objs/ft_ps_atoi_long.o ./objs/sa_sb_ss.o ./objs/ra_rb_rr.o ./objs/rra_rrb_rrr.o ./objs/pa_pb.o ./objs/sort_big_stack.o ./libs/libft/libft.a -o push_swap
+echo "\033[32mpush_swap created\n\033[0m"
+make: Leaving directory '/home/ben/projet/push_swap'
+ 

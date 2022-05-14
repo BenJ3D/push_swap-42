@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/12 21:47:01 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/13 00:57:34 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,20 +114,13 @@ int	init_push_swap(t_data *data, int ac, char **av)
 	check_double(data);
 	define_index_in_order_stack(data);
 	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "arg A", ".......");
-	op_pb(data);
+	if (data->nbr_arg == 2)
+		op_sa(data);
+	else if (data->nbr_arg == 3)
+		sort_three_arg(data);
+	else
+		sort_big_stack(data);
 	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
-	op_pb(data);
-	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
-
-	
-	
-	// if (data->nbr_arg == 2)
-	// 	op_sa(data);
-	// else if (data->nbr_arg == 3)
-	// 	sort_three_arg(data);
-	// else
-	// 	sort_big_stack(data);
-	// ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	
 	return (0);
 }
