@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/12 21:19:32 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/14 23:54:58 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,11 @@ typedef struct s_data
 	void	fill_stacka(t_data *data, int ac, char **av);
 	int		init_push_swap(t_data *data, int ac, char **av);
 	void	define_index_in_order_stack(t_data	*data);
-	
-/******----------------- operations -------------------******/
-	
-	void op_sa(t_data *data);
+	void	radix_sort(t_data *data);
+
+		/******----------------- operations -------------------******/
+
+		void op_sa(t_data *data);
 	void op_sb(t_data *data);
 	void op_ss(t_data *data);
 	
@@ -105,7 +106,7 @@ typedef struct s_data
 	int	check_stacka_is_sort(t_data *data);
 	int	check_double(t_data *data);
 	int	check_if_the_list_is_sort(t_data *data);
-	int	check_if_the_list_is_sorted_parsing(t_data *data);
+	//int	check_if_the_list_is_sorted_parsing(t_data *data);
 	int	check_arg_is_valid(int ac, char **av);
 	int	check_is_valid_int(t_data *data, char *str, int i);
 	int	check_int_max_or_min(t_data *data, long nb);

@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/14 19:54:13 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/15 00:24:41 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int sort_big_stack(t_data *data) //TODO:
 	lena = ft_lstsize(data->stacka);
 	tmpa = data->stacka;
 	i = 0;
-	while (y < 2)
+	while (y < 4)
 	{
 		// ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
-		printf("tour %i/n", y);
+		printf("\ntour %i\n", y + 1);
 		if (check_stacka_is_sort(data) == 1 && lena == 0)
 		{
 			printf("stacka est triée\n");
@@ -68,10 +68,12 @@ int sort_big_stack(t_data *data) //TODO:
 		while(lena > 0)
 		{
 			if ((tmpa->index >> i) & 1)
+				op_ra(data);
+			else
 				op_pb(data);
-			op_ra(data);
 			tmpa = data->stacka;
 			lena--;
+			ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 		}
 		if (lena == 0)
 		{
@@ -86,6 +88,35 @@ int sort_big_stack(t_data *data) //TODO:
 		y++;
 	}
 	return (0);
+}
+
+void radix_sort(t_data	*data)
+{
+	int i;
+	int j;
+	int lena;
+	t_list *tmpa;
+
+	i = 0;
+	tmpa = data->stacka;
+	lena = ft_lstsize(tmpa);
+	while (1)
+	{
+		j = lena;
+		while (j-- > 0)
+		{
+			tmpa = data->stacka;
+			if ((tmpa->index >> i) & 1)
+				op_ra(data);
+			else
+				op_pb(data);
+		}
+		while (ft_lstsize(data->stackb) != 0)
+			op_pa(data);
+		i++;
+		if (check_stacka_is_sort(data))
+			break ;
+	}
 }
 
 int	sort_three_arg(t_data *data)
