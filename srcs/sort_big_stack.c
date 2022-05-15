@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/15 00:24:41 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/15 19:16:27 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,8 @@ int sort_big_stack(t_data *data) //TODO:
 	i = 0;
 	while (y < 4)
 	{
-		// ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
-		printf("\ntour %i\n", y + 1);
 		if (check_stacka_is_sort(data) == 1 && lena == 0)
-		{
-			printf("stacka est triée\n");
 			break ; 
-		}
 		while(lena > 0)
 		{
 			if ((tmpa->index >> i) & 1)
@@ -73,15 +68,11 @@ int sort_big_stack(t_data *data) //TODO:
 				op_pb(data);
 			tmpa = data->stacka;
 			lena--;
-			ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 		}
 		if (lena == 0)
 		{
 			while (ft_lstsize(data->stackb) > 0)
-			{
 				op_pa(data);
-				ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
-			}
 			i++;
 			lena = ft_lstsize(data->stacka);
 		}
