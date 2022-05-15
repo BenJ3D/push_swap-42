@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/14 23:54:58 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/15 14:34:33 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ typedef struct s_data
 	void	define_index_in_order_stack(t_data	*data);
 	void	radix_sort(t_data *data);
 
-		/******----------------- operations -------------------******/
+	/******----------------- operations -------------------******/
 
-		void op_sa(t_data *data);
+	void op_sa(t_data *data);
 	void op_sb(t_data *data);
 	void op_ss(t_data *data);
 	
@@ -100,10 +100,11 @@ typedef struct s_data
 
 	int	ft_str_search_char(char *str, char c);
 	int	ft_atoi_long(const char *src, t_data *data);
+	int ft_atoi_long2(char *src, t_data *data);
 
-/******-------------- Error management --------------******/
+	/******-------------- Error management --------------******/
 
-	int	check_stacka_is_sort(t_data *data);
+		int check_stacka_is_sort(t_data *data);
 	int	check_double(t_data *data);
 	int	check_if_the_list_is_sort(t_data *data);
 	//int	check_if_the_list_is_sorted_parsing(t_data *data);

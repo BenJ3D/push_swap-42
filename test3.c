@@ -4,6 +4,7 @@ int main(int ac, char **av) //TODO tester les args en entree
 {
 	int i;
 
+	printf("ac = %i\n", ac); 
 	i = 1;
 	ac--;
 	while (ac-- > 0)

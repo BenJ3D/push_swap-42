@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 15 13:23:35 2022
+# Make data base, printed on Sun May 15 15:15:13 2022
 
 # Variables
 
@@ -63,7 +63,7 @@ SRC_PATH = ./srcs/
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4ceebe6f-bd07-41aa-be34-3220b20d95db.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bc1fdffb-59bc-43f5-afcd-cb37faeb6f27.sock
 # makefile (from 'Makefile', line 55)
 LDFLAGS = -L./libs/libft/
 # default
@@ -79,7 +79,7 @@ PWD = /home/ben/projet/push_swap
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/18_interop
+WSL_INTEROP = /run/WSL/8771_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -87,7 +87,7 @@ HOME = /home/ben
 # environment
 LOGNAME = ben
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 ZSH = /home/ben/.oh-my-zsh
 # environment
@@ -274,11 +274,11 @@ libft:
 # automatic
 # < := 
 # automatic
- 
 # ^ := 
 # automatic
 # ? := 
 # variable set hash-table stats:
+ 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'Makefile', line 86):
 	@make -C./libs/libft/
@@ -436,6 +436,6 @@ objs/sort_big_stack.o:
 # strcache performance: lookups = 71 / hit rate = 33%
 # hash-table stats:
 # Load=47/8192=1%, Rehash=0, Collisions=1/71=1%
-# Finished Make data base on Sun May 15 13:23:35 2022
+# Finished Make data base on Sun May 15 15:15:13 2022
 
  

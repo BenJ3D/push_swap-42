@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/15 00:30:02 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/15 15:01:48 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,20 @@ void init_stackb(t_data *data)
  * @param ac argc
  * @param av argv
  */
-void	fill_stacka(t_data *data, int ac, char **av)
+void	fill_stacka(t_data *data, int ac, char **av) 
 {
 	int i;
+	int tmp_nb;
 	t_list *tmp;
 
 	i = 1;
+	tmp_nb = 0;
 	tmp = NULL;
 	while (i < ac)
-		ft_lstadd_back(&tmp, ft_lstnew(ft_atoi_long(av[i++], data)));
+	{
+		tmp_nb = ft_atoi_long2(av[i++], data);
+		ft_lstadd_back(&tmp, ft_lstnew(tmp_nb));
+	}
 	(data)->stacka = tmp;
 }
 
