@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 14 19:35:11 2022
+# Make data base, printed on Sun May 15 13:23:35 2022
 
 # Variables
 
@@ -63,7 +63,7 @@ SRC_PATH = ./srcs/
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-9000bce1-baec-4d61-8363-68d80303910b.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4ceebe6f-bd07-41aa-be34-3220b20d95db.sock
 # makefile (from 'Makefile', line 55)
 LDFLAGS = -L./libs/libft/
 # default
@@ -189,10 +189,10 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 86028): 12 files, no impossibilities.
+# . (device 2064, inode 86028): 16 files, no impossibilities.
 # srcs (device 2064, inode 54816): No files, no impossibilities so far.
 
-# 12 files, no impossibilities in 2 directories.
+# 16 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -227,7 +227,6 @@ all: libft push_swap
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
- 
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -275,6 +274,7 @@ libft:
 # automatic
 # < := 
 # automatic
+ 
 # ^ := 
 # automatic
 # ? := 
@@ -430,12 +430,12 @@ objs/sort_big_stack.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 43 / storage = 445 B / avg = 10 B
-# current buf: size = 8162 B / used = 445 B / count = 43 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 47 / storage = 481 B / avg = 10 B
+# current buf: size = 8162 B / used = 481 B / count = 47 / avg = 10 B
 
-# strcache performance: lookups = 67 / hit rate = 35%
+# strcache performance: lookups = 71 / hit rate = 33%
 # hash-table stats:
-# Load=43/8192=1%, Rehash=0, Collisions=1/67=1%
-# Finished Make data base on Sat May 14 19:35:11 2022
+# Load=47/8192=1%, Rehash=0, Collisions=1/71=1%
+# Finished Make data base on Sun May 15 13:23:35 2022
 
  
