@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sun May 15 13:23:35 2022
+# Make data base, printed on Tue May 17 00:26:50 2022
 
 # Variables
 
@@ -18,9 +19,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
-# makefile (from 'Makefile', line 51)
+# makefile (from 'Makefile', line 52)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
-# makefile (from 'Makefile', line 49)
+# makefile (from 'Makefile', line 50)
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 # environment
 VSCODE_LOG_NATIVE = false
@@ -40,7 +41,7 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"25fe6a3290ec415596628d4afc87a88c.fr","_translationsConfigFile":"/home/ben/.vscode-server/data/clp/25fe6a3290ec415596628d4afc87a88c.fr/tcf.json","_cacheRoot":"/home/ben/.vscode-server/data/clp/25fe6a3290ec415596628d4afc87a88c.fr","_resolvedLanguagePackCoreLocation":"/home/ben/.vscode-server/data/clp/25fe6a3290ec415596628d4afc87a88c.fr/da15b6fd3ef856477bf6f4fb29ba1b7af717770d","_corruptedFile":"/home/ben/.vscode-server/data/clp/25fe6a3290ec415596628d4afc87a88c.fr/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /home/ben/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/node
-# makefile (from 'Makefile', line 61)
+# makefile (from 'Makefile', line 62)
 CFLAGS = 
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
@@ -48,7 +49,7 @@ MAKEFILE_LIST :=  Makefile
 GNUMAKEFLAGS := 
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 62)
+# makefile (from 'Makefile', line 63)
 SANITIZE = -fsanitize=address
 # environment
 VSCODE_CWD = /mnt/c/Users/ben13/AppData/Local/Programs/Microsoft VS Code
@@ -63,8 +64,8 @@ SRC_PATH = ./srcs/
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4ceebe6f-bd07-41aa-be34-3220b20d95db.sock
-# makefile (from 'Makefile', line 55)
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-54451066-8a5c-4754-919b-8b6ffb9e20b5.sock
+# makefile (from 'Makefile', line 56)
 LDFLAGS = -L./libs/libft/
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
@@ -102,10 +103,10 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 0
-# makefile (from 'Makefile', line 59)
+# makefile (from 'Makefile', line 60)
 CC = gcc $(CFLAGS) $(SANITIZE) $(LLDBFLAG)
 # makefile (from 'Makefile', line 32)
-SRC_NAME = main.c utils.c check_arg.c error.c mylst.c push_swap.c ft_ps_atoi_long.c sa_sb_ss.c ra_rb_rr.c rra_rrb_rrr.c pa_pb.c sort_big_stack.c
+SRC_NAME = main.c utils.c check_arg.c error.c mylst.c push_swap.c ft_ps_atoi_long.c sa_sb_ss.c ra_rb_rr.c rra_rrb_rrr.c pa_pb.c sort_big_stack.c free.c
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -162,13 +163,13 @@ HOSTTYPE = x86_64
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# makefile (from 'Makefile', line 63)
+# makefile (from 'Makefile', line 64)
 LLDBFLAG = -g3
-# makefile (from 'Makefile', line 57)
+# makefile (from 'Makefile', line 58)
 LFT = -lft
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
-# makefile (from 'Makefile', line 45)
+# makefile (from 'Makefile', line 46)
 OBJ_NAME = $(SRC_NAME:.c=.o)
 # default
 .RECIPEPREFIX := 
@@ -189,15 +190,15 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 86028): 16 files, no impossibilities.
+# . (device 2064, inode 86028): 17 files, no impossibilities.
 # srcs (device 2064, inode 54816): No files, no impossibilities so far.
 
-# 16 files, no impossibilities in 2 directories.
+# 17 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 objs/%.o: srcs/%.c
-#  recipe to execute (from 'Makefile', line 82):
+#  recipe to execute (from 'Makefile', line 83):
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) $(CPPFLAGS) -o $@ -c $<
 
@@ -223,6 +224,7 @@ objs/main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 all: libft push_swap
 #  Command line target.
 #  Implicit rule search has been done.
@@ -274,20 +276,19 @@ libft:
 # automatic
 # < := 
 # automatic
- 
 # ^ := 
 # automatic
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'Makefile', line 86):
+#  recipe to execute (from 'Makefile', line 87):
 	@make -C./libs/libft/
 
 git:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 110):
+#  recipe to execute (from 'Makefile', line 111):
 	@git add .
 	@printf "Message of the commit: " && read msg && git commit -m "$$msg"
 	@git push
@@ -301,7 +302,7 @@ git:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-11 23:00:02.999188196
+#  Last modified 2022-05-17 00:26:43.492426973
 #  File has been updated.
 #  Successfully updated.
 
@@ -323,11 +324,17 @@ fclean,:
 #  File does not exist.
 #  File has not been updated.
 
+# Not a target:
+objs/free.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 96):
+#  recipe to execute (from 'Makefile', line 97):
 	@make fclean -C ./libs/libft/
 	@echo "\033[33mRemoval of $(NAME)...\033[0m"
 	@rm -rf $(NAME)
@@ -367,18 +374,18 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 89):
+#  recipe to execute (from 'Makefile', line 90):
 	@make clean -C ./libs/libft/
 	@echo "\033[33mRemoval of .o files of $(NAME) ...\033[0m"
 	@rm -f $(OBJ)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[31mFiles .o deleted\n\033[0m"
 
-push_swap: libs/libft/libft.a objs/main.o objs/utils.o objs/check_arg.o objs/error.o objs/mylst.o objs/push_swap.o objs/ft_ps_atoi_long.o objs/sa_sb_ss.o objs/ra_rb_rr.o objs/rra_rrb_rrr.o objs/pa_pb.o objs/sort_big_stack.o includes/push_swap.h Makefile
+push_swap: libs/libft/libft.a objs/main.o objs/utils.o objs/check_arg.o objs/error.o objs/mylst.o objs/push_swap.o objs/ft_ps_atoi_long.o objs/sa_sb_ss.o objs/ra_rb_rr.o objs/rra_rrb_rrr.o objs/pa_pb.o objs/sort_big_stack.o objs/free.o includes/push_swap.h Makefile
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 72):
+#  recipe to execute (from 'Makefile', line 73):
 	@echo "\033[34mCreation of $(NAME) on linux ...\033[0m"
 	@$(CC) $(OBJ) $(LIBFT_PATH) -o $@
 	@echo "\033[32m$(NAME) created\n\033[0m"
@@ -411,7 +418,7 @@ norme:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 104):
+#  recipe to execute (from 'Makefile', line 105):
 	norminette ./srcs/
 	norminette ./includes/*.h
 	norminette $(LIBFT_PATH)*.c
@@ -423,19 +430,19 @@ objs/sort_big_stack.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=29/1024=3%, Rehash=0, Collisions=2/67=3%
+# Load=30/1024=3%, Rehash=0, Collisions=2/69=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 47 / storage = 481 B / avg = 10 B
-# current buf: size = 8162 B / used = 481 B / count = 47 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 50 / storage = 527 B / avg = 10 B
+# current buf: size = 8162 B / used = 527 B / count = 50 / avg = 10 B
 
-# strcache performance: lookups = 71 / hit rate = 33%
+# strcache performance: lookups = 73 / hit rate = 31%
 # hash-table stats:
-# Load=47/8192=1%, Rehash=0, Collisions=1/71=1%
-# Finished Make data base on Sun May 15 13:23:35 2022
+# Load=50/8192=1%, Rehash=0, Collisions=1/73=1%
+# Finished Make data base on Tue May 17 00:26:50 2022
 
  

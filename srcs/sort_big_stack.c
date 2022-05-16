@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/15 19:16:27 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:19:01 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,3 +137,5 @@ int	sort_three_arg(t_data *data)
 		op_rra(data);
 	return (0);
 }
+
+int	
