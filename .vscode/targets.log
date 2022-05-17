@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Tue May 17 00:26:50 2022
+# Make data base, printed on Wed May 18 00:00:25 2022
 
 # Variables
 
@@ -64,7 +63,7 @@ SRC_PATH = ./srcs/
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-54451066-8a5c-4754-919b-8b6ffb9e20b5.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c12897b9-0e89-4602-ae8b-fd65d9e8411b.sock
 # makefile (from 'Makefile', line 56)
 LDFLAGS = -L./libs/libft/
 # default
@@ -88,7 +87,7 @@ HOME = /home/ben
 # environment
 LOGNAME = ben
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 ZSH = /home/ben/.oh-my-zsh
 # environment
@@ -224,7 +223,6 @@ objs/main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 all: libft push_swap
 #  Command line target.
 #  Implicit rule search has been done.
@@ -276,6 +274,7 @@ libft:
 # automatic
 # < := 
 # automatic
+ 
 # ^ := 
 # automatic
 # ? := 
@@ -443,6 +442,6 @@ objs/sort_big_stack.o:
 # strcache performance: lookups = 73 / hit rate = 31%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/73=1%
-# Finished Make data base on Tue May 17 00:26:50 2022
+# Finished Make data base on Wed May 18 00:00:25 2022
 
  
