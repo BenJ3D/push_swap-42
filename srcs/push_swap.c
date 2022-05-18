@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:07:08 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/15 00:30:02 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:34:36 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,11 @@ int	init_push_swap(t_data *data, int ac, char **av)
 		op_sa(data);
 	else if (data->nbr_arg == 3)
 		sort_three_arg(data);
+	else if (data->nbr_arg == 4 || data->nbr_arg == 5)
+		sort_five_arg(data);
 	else
 		radix_sort(data);
-		// sort_big_stack(data);
+	// sort_big_stack(data);
 	// ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/16 10:19:01 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:48:01 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,4 +138,61 @@ int	sort_three_arg(t_data *data)
 	return (0);
 }
 
-int	
+int	pushb_index_min_for5(t_data *data)
+{
+	int	i;
+
+	i = 2;
+	if (data->nbr_arg == 5)
+	{
+		while (i > 0)
+		{
+			if(data->stacka->index == 0 || data->stacka->index == 1)
+			{
+				op_pb(data);
+				i--;
+			}
+			op_ra(data);
+		}
+		if (data->stackb->index < data->stackb->next->index)
+			op_rb(data);
+	}
+	else
+	{
+		while(data->stacka->index != 0)
+			op_ra(data);
+		op_pb(data);
+	}
+	return (0);
+}
+
+int	pushb_index_min_for4(t_data *data)
+{
+	if (data->stacka->next->next->next->index == 0)
+		op_rra(data);
+	else
+	{
+		while (data->stacka->index != 0)
+			op_ra(data);
+	}
+	op_pb(data);
+	return (0);
+}
+
+int	sort_five_arg(t_data *data)
+{	
+	if (data->nbr_arg == 5)
+		pushb_index_min_for5(data);
+	else
+		pushb_index_min_for4(data);
+	sort_three_arg(data);
+	if (data->nbr_arg == 4)
+		op_pa(data);
+	else
+	{
+		op_pa(data);
+		op_pa(data);
+	}
+	ft_lstprint_stack_a_b(data->stacka, data->stackb, "stacka", "stackb");
+	return (0);
+}
