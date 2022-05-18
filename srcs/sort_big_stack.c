@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/18 16:44:34 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:07:33 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,34 @@ int	search_pos_index(t_list *lst, int index)
 		tmp = tmp->next;
 	}
 	return (count);
+}
+
+int	utils_algo5_0(t_data *data) //TODO: opti algo
+{
+	int		count0;
+	int		count1;
+
+	count0 = search_pos_index(data->stacka, 0);
+	if (count0 > 3)
+		while(data->stacka->index != 0)
+			op_rra(data);
+	else
+		while(data->stacka->index != 0)
+			op_ra(data);
+	op_pb(data);
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
+	count1 = search_pos_index(data->stacka, 1);
+	if (count1 > 3)
+		while(data->stacka->index != 1)
+			op_rra(data);
+	else
+		while(data->stacka->index != 1)
+			op_ra(data);
+	op_pb(data);
+	if (data->stackb->index < data->stackb->next->index)
+			op_rb(data);
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
+	return (0);
 }
 
 int	pushb_index_min_for5(t_data *data)
