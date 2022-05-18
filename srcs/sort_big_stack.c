@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/18 14:48:01 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:44:34 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,36 +138,54 @@ int	sort_three_arg(t_data *data)
 	return (0);
 }
 
+int	search_pos_index(t_list *lst, int index)
+{
+	t_list	*tmp;
+	int		count;
+
+	count = 0;
+	tmp = lst;
+	while (tmp)
+	{
+		if (tmp->index == index)
+			break;
+		count++;
+		tmp = tmp->next;
+	}
+	return (count);
+}
+
 int	pushb_index_min_for5(t_data *data)
 {
-	int	i;
+	int		count0;
+	int		count1;
 
-	i = 2;
-	if (data->nbr_arg == 5)
-	{
-		while (i > 0)
-		{
-			if(data->stacka->index == 0 || data->stacka->index == 1)
-			{
-				op_pb(data);
-				i--;
-			}
-			op_ra(data);
-		}
-		if (data->stackb->index < data->stackb->next->index)
-			op_rb(data);
-	}
+	count0 = search_pos_index(data->stacka, 0);
+	if (count0 > 3)
+		while(data->stacka->index != 0)
+			op_rra(data);
 	else
-	{
 		while(data->stacka->index != 0)
 			op_ra(data);
-		op_pb(data);
-	}
+	op_pb(data);
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
+	count1 = search_pos_index(data->stacka, 1);
+	if (count1 > 3)
+		while(data->stacka->index != 1)
+			op_rra(data);
+	else
+		while(data->stacka->index != 1)
+			op_ra(data);
+	op_pb(data);
+	if (data->stackb->index < data->stackb->next->index)
+			op_rb(data);
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	return (0);
 }
 
 int	pushb_index_min_for4(t_data *data)
 {
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	if (data->stacka->next->next->next->index == 0)
 		op_rra(data);
 	else
@@ -181,6 +199,7 @@ int	pushb_index_min_for4(t_data *data)
 
 int	sort_five_arg(t_data *data)
 {	
+	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	if (data->nbr_arg == 5)
 		pushb_index_min_for5(data);
 	else
@@ -193,6 +212,5 @@ int	sort_five_arg(t_data *data)
 		op_pa(data);
 		op_pa(data);
 	}
-	ft_lstprint_stack_a_b(data->stacka, data->stackb, "stacka", "stackb");
 	return (0);
 }
