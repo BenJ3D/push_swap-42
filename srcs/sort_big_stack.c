@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/18 17:07:33 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:04:52 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,6 @@ int	utils_algo5_0(t_data *data) //TODO: opti algo
 		while(data->stacka->index != 0)
 			op_ra(data);
 	op_pb(data);
-	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	count1 = search_pos_index(data->stacka, 1);
 	if (count1 > 3)
 		while(data->stacka->index != 1)
@@ -179,7 +178,7 @@ int	utils_algo5_0(t_data *data) //TODO: opti algo
 	op_pb(data);
 	if (data->stackb->index < data->stackb->next->index)
 			op_rb(data);
-	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
+	// ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	return (0);
 }
 
@@ -196,7 +195,6 @@ int	pushb_index_min_for5(t_data *data)
 		while(data->stacka->index != 0)
 			op_ra(data);
 	op_pb(data);
-	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	count1 = search_pos_index(data->stacka, 1);
 	if (count1 > 3)
 		while(data->stacka->index != 1)
@@ -207,13 +205,11 @@ int	pushb_index_min_for5(t_data *data)
 	op_pb(data);
 	if (data->stackb->index < data->stackb->next->index)
 			op_rb(data);
-	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	return (0);
 }
 
 int	pushb_index_min_for4(t_data *data)
 {
-	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	if (data->stacka->next->next->next->index == 0)
 		op_rra(data);
 	else
@@ -227,7 +223,6 @@ int	pushb_index_min_for4(t_data *data)
 
 int	sort_five_arg(t_data *data)
 {	
-	ft_lstprint_stack_a_b((data)->stacka, (data)->stackb, "stack a", "stack b");
 	if (data->nbr_arg == 5)
 		pushb_index_min_for5(data);
 	else
