@@ -6,12 +6,11 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 01:36:22 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/19 14:22:58 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/21 11:43:52 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

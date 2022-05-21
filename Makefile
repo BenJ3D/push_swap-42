@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/05/17 00:26:43 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/21 11:40:24 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ LFT = -lft
 CC = gcc $(CFLAGS) $(SANITIZE) $(LLDBFLAG)
 
 CFLAGS =# -Wall -Wextra -Werror
-SANITIZE = -fsanitize=address
+SANITIZE = #-fsanitize=address
 LLDBFLAG =  -g3
 
 # Rules

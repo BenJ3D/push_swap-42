@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 22:31:17 by vbrazhni          #+#    #+#             */
-/*   Updated: 2022/05/18 13:37:28 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/21 11:44:57 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void free_command_list(t_list *list)
 	// 	free(delete);
 	// }
 	// free(list);
+	
 }
 
 void free_stack(t_list *stack) //TODO modif ft
