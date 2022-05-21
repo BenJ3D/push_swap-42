@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/19 14:23:55 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/21 14:17:33 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct s_data
 	int		init_push_swap(t_data *data, int ac, char **av);
 	void	define_index_in_order_stack(t_data	*data);
 	void	radix_sort(t_data *data);
+	int		free_all(t_data *data);
 
 		/******----------------- operations -------------------******/
 
@@ -104,29 +105,32 @@ typedef struct s_data
 
 /******-------------- Error management --------------******/
 
-	int	check_stacka_is_sort(t_data *data);
-	int	check_double(t_data *data);
-	int	check_if_the_list_is_sort(t_data *data);
+	int		check_stacka_is_sort(t_data *data);
+	int		check_double(t_data *data);
+	int		check_if_the_list_is_sort(t_data *data);
 	//int	check_if_the_list_is_sorted_parsing(t_data *data);
-	int	check_arg_is_valid(int ac, char **av);
-	int	check_is_valid_int(t_data *data, char *str, int i);
-	int	check_int_max_or_min(t_data *data, long nb);
-	int	write_error_type(t_data *data);
+	int		check_arg_is_valid(int ac, char **av);
+	int		check_is_valid_int(t_data *data, char *str, int i);
+	int		check_int_max_or_min(t_data *data, long nb);
+	int		write_error_type(t_data *data);
 
 /******-------------- my_lst function --------------******/
 
-	int	ft_lstsize(t_list *lst);
-	void ft_lstprint(t_list *list);
-	void ft_lstprintv(t_list *list);
-	void ft_lstprint_index(t_list *list);
-	void ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb);
-	void	ft_lstclear(t_list **lst, void (*del)(void*));
-	void	ft_lstdelone(t_list *lst, void (*del)(void *));
+	int		ft_lstsize(t_list *lst);
+	void	ft_lstprint(t_list *list);
+	void	ft_lstprintv(t_list *list);
+	void	ft_lstprint_index(t_list *list);
+	void	ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *nama, char *namb);
+	void	ft_lstclear(t_list **lst);
+	void	ft_lstdelone(t_list *lst);
+
+	int	del_content(int	nb);
+
 
 	// chained list
-	t_list *ft_lstnew(int content);
-	void ft_lstadd_front(t_list **alst, t_list *new);
-	t_list *ft_lstlast(t_list *lst);
-	void ft_lstadd_back(t_list **alst, t_list *new);
+	t_list	*ft_lstnew(int content);
+	void	ft_lstadd_front(t_list **alst, t_list *new);
+	t_list	*ft_lstlast(t_list *lst);
+	void	ft_lstadd_back(t_list **alst, t_list *new);
 
 #endif

@@ -6,43 +6,30 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 22:31:17 by vbrazhni          #+#    #+#             */
-/*   Updated: 2022/05/21 11:44:57 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/21 14:40:11 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void free_command_list(t_list *list)
+void	ft_lstclear(t_list **lst)
 {
-	// t_list *current;
-	// t_list *delete;
+	t_list	*tmp;
 
-	// current = list->head;
-	// while (current)
-	// {
-	// 	delete = current;
-	// 	current = current->next;
-	// 	free(delete->name);
-	// 	free(delete);
-	// }
-	// free(list);
-	
+	if (lst)
+	{
+		while (*lst)
+		{
+			tmp = (*lst)->next;
+			ft_lstdelone(*lst);
+			(*lst) = tmp;
+		}
+	}
 }
 
-void free_stack(t_list *stack) //TODO modif ft
+void	ft_lstdelone(t_list *lst)
 {
-	// size_t i;
-	// t_list *current;
-	// t_list *delete;
-
-	// i = 0;
-	// current = stack->head;
-	// while (i < stack->size)
-	// {
-	// 	delete = current;
-	// 	current = current->next;
-	// 	free(delete);
-	// 	i++;
-	// }
-	// free(stack);
+	if (!lst)
+		return ;
+	free(lst);
 }

@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:30:59 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/08 20:28:55 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/21 16:00:41 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int ft_atoi_long(const char *src, t_data *data)
 		i++;
 	if (str[i] == '-' && str[i + 1] != '+')
 	{
-		sign *= -1;
+		sign = -1;
 		i++;
 	}
 	if (str[i] == '+')

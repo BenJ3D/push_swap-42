@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/12 19:31:57 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/21 16:12:24 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ int	check_stacka_is_sort(t_data *data)
 
 int	check_is_valid_int(t_data *data, char *str, int i)
 {
+	// if (i == i - 1 && i == ft_strlen(str)) //FIXME:
+	//	(data)->error = ERROR_IS_NOT_INT;
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 0)

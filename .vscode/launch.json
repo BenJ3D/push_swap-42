@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Debug push swap",
 			"program": "${workspaceFolder}/push_swap",
-			"args": ["45" "2" "-75" "-500" "-600" ],
+			"args": ["50", " -"],
 			"cwd": "${workspaceFolder}",
 			"preLaunchTask": "build PUSH SWAP"
 		}

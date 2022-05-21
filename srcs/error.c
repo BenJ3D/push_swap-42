@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/18 16:28:47 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/21 14:47:57 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	write_error_type2(t_data *data)
 int write_error_type(t_data *data)
 {
 	if (data->error != NO_ERROR && data->error != ERROR_ALREADY_SORT)
-		ft_putstr("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	// if (data->error == ERROR && data->error != ERROR_ALREADY_SORT)
 	// 	ft_putstr("Error\n");
 	// else if (data->error == ERROR_DOUBLE)
