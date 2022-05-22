@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ra_rb_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 17:38:41 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 14:14:47 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ int	operation_rotate(t_list **lst)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
-	
+
 	if (ft_lstsize(*lst) < 2)
 		return (1);
 	tmp = (*lst);
 	tmp2 = (*lst);
-	while(tmp2->next)
+	while (tmp2->next)
 		tmp2 = tmp2->next;
 	tmp2->next = tmp;
 	*lst = (*lst)->next;

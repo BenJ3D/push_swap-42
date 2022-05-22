@@ -6,13 +6,13 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/22 12:10:20 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 13:02:58 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int write_error_type(t_data *data)
+int	write_error_type(t_data *data)
 {
 	if (data->error != NO_ERROR && data->error != ERROR_ALREADY_SORT)
 		ft_putstr_fd("Error\n", 2);

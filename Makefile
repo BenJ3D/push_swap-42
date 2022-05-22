@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+         #
+#    By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2022/05/21 13:33:26 by bducrocq         ###   ########.fr        #
+#    Updated: 2022/05/22 17:00:26 by bducrocq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,19 +29,20 @@ HEADER = ./includes/push_swap.h
 
 # Name
 
-SRC_NAME =	main.c				\
-			utils.c				\
-			check_arg.c			\
-			error.c				\
-			mylst.c				\
-			push_swap.c			\
-			ft_ps_atoi_long.c 	\
-			sa_sb_ss.c			\
-			ra_rb_rr.c			\
-			rra_rrb_rrr.c		\
-			pa_pb.c				\
-			sort_big_stack.c	\
-			free.c
+SRC_NAME =	main.c					\
+			check_arg.c				\
+			error.c					\
+			mylst_tools.c			\
+			tools.c					\
+			push_swap.c				\
+			ft_ps_atoi_long.c 		\
+			sa_sb_ss.c				\
+			ra_rb_rr.c				\
+			rra_rrb_rrr.c			\
+			pa_pb.c					\
+			algo_and_radix_sort.c	\
+			free.c					\
+			debug.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -59,9 +60,9 @@ LFT = -lft
 
 CC = gcc $(CFLAGS) $(SANITIZE) $(LLDBFLAG)
 
-CFLAGS =# -Wall -Wextra -Werror
-SANITIZE = #-fsanitize=address
-LLDBFLAG =  -g3
+CFLAGS = -Wall -Wextra -Werror
+SANITIZE = -fsanitize=address
+LLDBFLAG = -g3
 
 # Rules
 

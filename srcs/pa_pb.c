@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pa_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 17:35:09 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 14:05:15 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	op_pa(t_data *data)
 {
 	if (!(operation_push(&data->stacka, &data->stackb)))
 		ft_putstr("pa\n");
-
 }
 
 void	op_pb(t_data *data)

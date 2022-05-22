@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 22:31:17 by vbrazhni          #+#    #+#             */
-/*   Updated: 2022/05/21 14:40:11 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 16:51:07 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	ft_lstclear(t_list **lst)
 	{
 		while (*lst)
 		{
+			(*lst)->bsort = FALSE;
+			(*lst)->content = 0;
+			(*lst)->index = 0;
 			tmp = (*lst)->next;
 			ft_lstdelone(*lst);
 			(*lst) = tmp;

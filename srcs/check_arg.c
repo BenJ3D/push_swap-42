@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/21 16:12:24 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 12:35:17 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int check_double(t_data *data)
+int	check_double(t_data *data)
 {
-	t_list *tmplst;
-	t_list *tmpcmp;
+	t_list	*tmplst;
+	t_list	*tmpcmp;
 
 	tmplst = (data)->stacka;
 	tmpcmp = (data)->stacka->next;
-	while (tmplst->next != NULL) // TODO comparer les doubles
+	while (tmplst->next != NULL)
 	{
 		while (tmpcmp != NULL)
 		{
@@ -39,10 +39,9 @@ int check_double(t_data *data)
 
 int	check_if_the_list_is_sort(t_data *data)
 {
-	int	i;
-	int	y;
+	int		i;
+	int		y;
 	t_list	*tmp;
-	int dbarg = (data)->nbr_arg;
 
 	tmp = (data)->stacka;
 	i = 1;
@@ -64,10 +63,9 @@ int	check_if_the_list_is_sort(t_data *data)
 
 int	check_stacka_is_sort(t_data *data)
 {
-	int	i;
-	int	y;
+	int		i;
+	int		y;
 	t_list	*tmp;
-	int dbarg = (data)->nbr_arg;
 
 	tmp = (data)->stacka;
 	if (tmp->next == NULL)
@@ -88,18 +86,14 @@ int	check_stacka_is_sort(t_data *data)
 	return (0);
 }
 
-
-
 int	check_is_valid_int(t_data *data, char *str, int i)
 {
-	// if (i == i - 1 && i == ft_strlen(str)) //FIXME:
-	//	(data)->error = ERROR_IS_NOT_INT;
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 0)
 		{
 			(data)->error = ERROR_IS_NOT_INT;
-			break;
+			break ;
 		}
 		i++;
 	}
@@ -107,7 +101,7 @@ int	check_is_valid_int(t_data *data, char *str, int i)
 	return (0);
 }
 
-int check_int_max_or_min(t_data *data, long nb)
+int	check_int_max_or_min(t_data *data, long nb)
 {
 	if (nb > INT_MAX)
 		(data)->error = ERROR_INT_MAXUP;

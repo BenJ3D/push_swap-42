@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 11:43:51 by bducrocq          #+#    #+#             */
-/*   Updated: 2021/11/22 16:16:54 by bducrocq         ###   ########.fr       */
+/*   Created: 2022/05/22 15:25:44 by bducrocq          #+#    #+#             */
+/*   Updated: 2022/05/22 15:26:34 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*tmp;
+	size_t	i;
 
-	tmp = (t_list *)malloc(sizeof(*tmp));
-	if (!tmp)
-		return (NULL);
-	tmp->content = content;
-	tmp->next = NULL;
-	return (tmp);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

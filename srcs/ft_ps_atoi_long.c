@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ps_atoi_long.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 16:30:59 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/21 16:00:41 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 12:32:17 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int ft_isspace3(char c)
+int	ft_isspace3(char c)
 {
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' 
-|| c == '\f' || c == '\r')
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r')
 		return (1);
 	return (0);
 }
 
-int ft_atoi_long(const char *src, t_data *data)
+int	ft_atoi_long(const char *src, t_data *data)
 {
-	int i;
-	long nb;
-	int sign;
-	char *str;
+	int		i;
+	long	nb;
+	int		sign;
+	char	*str;
 
 	str = (char *)src;
 	nb = 0;

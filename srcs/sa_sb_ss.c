@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sa_sb_ss.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/11 17:41:41 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 14:15:01 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	op_sb(t_data *data)
 		ft_putstr("sb\n");
 }
 
-int		operation_swap(t_list **lst)
+int	operation_swap(t_list **lst)
 {
 	t_list	*tmp;
-	
+
 	if (ft_lstsize(*lst) < 2)
 		return (1);
 	tmp = (*lst)->next;
