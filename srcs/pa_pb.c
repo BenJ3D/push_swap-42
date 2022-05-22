@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/22 14:05:15 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 17:03:56 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void	op_pb(t_data *data)
 
 int	operation_push(t_list **lstdst, t_list **lstsrc)
 {
-	t_list	*tmpsrc;
-	t_list	*tmpdst;
 	t_list	*tmp;
 
 	if (ft_lstsize(*lstsrc) < 1)

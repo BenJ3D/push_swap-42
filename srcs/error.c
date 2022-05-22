@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:47:13 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/22 13:02:58 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 17:03:23 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,3 @@ int	check_type_file(char *str, char *filetype)
 	return (0);
 }
 
-int	check_norm_arg_is_ok(int ac, char *str, t_data *data)
-{
-	if (data->error != NO_ERROR)
-		return (1);
-	return (0);
-}
