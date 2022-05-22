@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sun May 22 17:00:53 2022
+# Make data base, printed on Sun May 22 17:12:58 2022
 
 # Variables
 
@@ -50,7 +49,7 @@ GNUMAKEFLAGS :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 64)
-SANITIZE = -fsanitize=address
+SANITIZE = 
 # environment
 VSCODE_CWD = /mnt/c/Users/ben13/AppData/Local/Programs/Microsoft VS Code
 # default
@@ -166,7 +165,7 @@ HOSTTYPE = x86_64
 # default
 SUFFIXES := 
 # makefile (from 'Makefile', line 65)
-LLDBFLAG = -g3
+LLDBFLAG = 
 # makefile (from 'Makefile', line 59)
 LFT = -lft
 # default
@@ -192,10 +191,10 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 86028): 14 files, no impossibilities.
+# . (device 2064, inode 86028): 15 files, no impossibilities.
 # srcs (device 2064, inode 54816): No files, no impossibilities so far.
 
-# 14 files, no impossibilities in 2 directories.
+# 15 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -285,6 +284,7 @@ libft:
 # automatic
 # ^ := 
 # automatic
+ 
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
@@ -309,8 +309,7 @@ git:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-05-22 17:00:26.838932028
+#  Last modified 2022-05-22 17:12:11.938927336
 #  File has been updated.
 #  Successfully updated.
 
@@ -448,9 +447,9 @@ objs/tools.o:
 # strcache buffers: 1 (0) / strings = 48 / storage = 534 B / avg = 11 B
 # current buf: size = 8162 B / used = 534 B / count = 48 / avg = 11 B
 
-# strcache performance: lookups = 71 / hit rate = 32%
+# strcache performance: lookups = 72 / hit rate = 33%
 # hash-table stats:
-# Load=48/8192=1%, Rehash=0, Collisions=1/71=1%
-# Finished Make data base on Sun May 22 17:00:53 2022
+# Load=48/8192=1%, Rehash=0, Collisions=1/72=1%
+# Finished Make data base on Sun May 22 17:12:58 2022
 
  
