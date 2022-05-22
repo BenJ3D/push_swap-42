@@ -6,7 +6,7 @@
 /*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:51:25 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/22 17:13:01 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/22 17:13:29 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,4 +122,5 @@ int		write_error_type(t_data *data);
 // void	ft_lstprintv(t_list *list);
 // void	ft_lstprint_index(t_list *list);
 // void	ft_lstprint_stack_a_b(t_list *lsta, t_list *lstb, char *na, char *nb);
+
 #endif
