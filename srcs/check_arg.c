@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bducrocq <bducrocq@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bducrocq <bducrocq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:01:39 by bducrocq          #+#    #+#             */
-/*   Updated: 2022/05/22 12:35:17 by bducrocq         ###   ########.fr       */
+/*   Updated: 2022/05/23 12:12:22 by bducrocq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,11 @@ int	check_stacka_is_sort(t_data *data)
 
 int	check_is_valid_int(t_data *data, char *str, int i)
 {
+	if (ft_isdigit(str[i]) == 0)
+	{
+		(data)->error = ERROR_IS_NOT_INT;
+		write_error_type(data);
+	}
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 0)
